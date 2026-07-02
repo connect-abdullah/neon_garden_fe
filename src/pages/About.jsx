@@ -72,8 +72,8 @@ export default function About() {
             <Reveal delay={1} className="lg:order-2">
               <div className="overflow-hidden rounded-tokenlg shadow-lg2">
                 <img
-                  src="/assets/images/ng-100.jpg"
-                  alt="Soft, elegant event décor by Neon Garden"
+                  src="/assets/images/ng-088.jpg"
+                  alt="Neon 'Oh It's Perfect' sign framed by tropical greenery and balloons at a Neon Garden event"
                   loading="lazy"
                   className="aspect-[4/5] w-full object-cover transition-transform duration-[900ms] hover:scale-[1.04]"
                 />

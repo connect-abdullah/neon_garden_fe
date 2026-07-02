@@ -18,10 +18,10 @@ export default function HireCard({ img, title, to = '/hire-items', label = 'View
           className="h-full w-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
         />
       </div>
-      <div className="flex items-center justify-between gap-3 p-6">
-        <h3 className="text-[1.3rem] transition-colors duration-300 group-hover:text-neonpink">{title}</h3>
-        <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-plum/5 text-plum transition-all duration-300 group-hover:bg-neonpink group-hover:text-white">
-          <ArrowRight size={17} aria-hidden="true" />
+      <div className="flex items-center justify-between gap-2 p-4 sm:gap-3 sm:p-6">
+        <h3 className="min-w-0 [@media(max-width:322px)]:text-[0.70rem] text-[0.95rem] leading-tight [overflow-wrap:anywhere] transition-colors duration-300 group-hover:text-neonpink sm:text-[1.3rem]">{title}</h3>
+        <span className="grid [@media(max-width:319px)]:h-6 [@media(max-width:319px)]:w-6 h-8 w-8 shrink-0 place-items-center rounded-full bg-plum/5 text-plum transition-all duration-300 group-hover:bg-neonpink group-hover:text-white sm:h-9 sm:w-9">
+          <ArrowRight size={16} aria-hidden="true" />
         </span>
       </div>
       <span className="sr-only">{label}</span>

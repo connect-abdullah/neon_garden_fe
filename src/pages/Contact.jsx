@@ -39,7 +39,7 @@ export default function Contact() {
 
       <section className="py-[70px] lg:py-28">
         <Container>
-          <div className="grid gap-[50px] lg:grid-cols-2">
+          <div className="grid gap-10 lg:grid-cols-2 lg:gap-[50px]">
             <Reveal className="flex flex-col gap-4">
               {INFO.map((item) => (
                 <ContactInfoCard key={item.title} {...item} />
@@ -51,7 +51,7 @@ export default function Contact() {
             </Reveal>
           </div>
 
-          <Reveal className="mt-[60px]">
+          <Reveal className="mt-10 lg:mt-[60px]">
             <MapCard mapEmbed={CONTACT.mapEmbed} address={CONTACT.address} />
           </Reveal>
         </Container>

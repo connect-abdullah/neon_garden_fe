@@ -7,7 +7,7 @@ const EMPTY = { name: '', phone: '', email: '', event_date: '', event_type: '', 
 
 function Field({ label, name, type = 'text', value, onChange, required }) {
   return (
-    <div className="flex flex-col gap-1.5">
+    <div className="flex min-w-0 flex-col gap-1.5">
       <label htmlFor={name} className="text-[.76rem] font-semibold uppercase tracking-[.12em] text-muted">
         {label}
       </label>
@@ -55,14 +55,14 @@ export default function ContactForm({ eventTypes = [] }) {
         <p className="text-[.92rem] text-muted">Fill in your details and we'll respond within 24 hours.</p>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid min-w-0 gap-4 sm:grid-cols-2">
         <Field label="Full Name" name="name" value={form.name} onChange={update} required />
         <Field label="Phone" name="phone" type="tel" value={form.phone} onChange={update} required />
       </div>
       <Field label="Email" name="email" type="email" value={form.email} onChange={update} required />
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid min-w-0 gap-4 sm:grid-cols-2">
         <Field label="Event Date" name="event_date" type="date" value={form.event_date} onChange={update} required />
-        <div className="flex flex-col gap-1.5">
+        <div className="flex min-w-0 flex-col gap-1.5">
           <label htmlFor="event_type" className="text-[.76rem] font-semibold uppercase tracking-[.12em] text-muted">
             Event Type
           </label>

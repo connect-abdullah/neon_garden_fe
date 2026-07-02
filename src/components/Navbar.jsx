@@ -41,7 +41,7 @@ export default function Navbar() {
             variant="soft"
             className="hidden lg:inline-grid"
           />
-          <IconButton icon={WhatsAppIcon} label="Chat on WhatsApp" href={WA_ENQUIRE} variant="whatsapp" iconSize={22} />
+          {/* <IconButton icon={WhatsAppIcon} label="Chat on WhatsApp" href={WA_ENQUIRE} variant="whatsapp" iconSize={22} /> */}
           {/* Hamburger */}
           <IconButton
             icon={open ? X : Menu}

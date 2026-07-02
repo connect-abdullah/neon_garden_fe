@@ -7,7 +7,8 @@
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
     width: 100%;
-    max-width: 100vw;
+    max-width: 100%;
+    overflow-x: hidden;
   }
   body {
     @apply font-sans text-ink bg-cream antialiased;
@@ -16,12 +17,12 @@
     overflow-x: hidden;
     text-rendering: optimizeLegibility;
     width: 100%;
-    max-width: 100vw;
+    max-width: 100%;
   }
   #root {
     width: 100%;
-    max-width: 100vw;
-    overflow-x: clip;
+    max-width: 100%;
+    overflow-x: hidden;
   }
   h1, h2, h3, h4, h5 {
     @apply font-sans text-plum;
@@ -123,7 +124,7 @@
 
   /* Form fields (contact page) */
   .field-input {
-    @apply font-sans text-[1rem] px-4 py-3.5 border border-line rounded-xl bg-cream text-ink transition-all;
+    @apply w-full min-w-0 max-w-full appearance-none font-sans text-[1rem] px-4 py-3.5 border border-line rounded-xl bg-cream text-ink transition-all;
   }
   .field-input:focus {
     @apply outline-none border-neonpink bg-white;

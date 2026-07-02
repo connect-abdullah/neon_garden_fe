@@ -64,7 +64,7 @@ export default function Home() {
         }
         subtitle="From glowing neon backdrops to lush vertical gardens, we design bespoke event styling that turns weddings, nikahs, birthdays and every celebration into an unforgettable moment."
       >
-        <div className="flex flex-row flex-nowrap justify-center gap-3 sm:flex-wrap sm:gap-3.5">
+        <div className="flex max-w-full flex-wrap justify-center gap-3 sm:gap-3.5">
           <Button className="text-[10px] sm:text-sm px-2 py-2 sm:px-5 sm:py-2" variant="gold" to="/services" iconRight={ArrowRight}>
             Explore Services
           </Button>
@@ -95,9 +95,13 @@ export default function Home() {
                   className="aspect-[4/5] w-full object-cover transition-transform duration-[900ms] hover:scale-[1.04]"
                 />
               </div>
-              <div className="absolute -bottom-7 -right-2 grid h-[120px] w-[120px] place-items-center rounded-full bg-white p-4 text-center font-serif text-[.78rem] leading-tight text-plum shadow-lg2 sm:-right-7 sm:h-[160px] sm:w-[160px] sm:text-[.95rem]">
+              <div className="absolute -bottom-5 right-3 grid h-[120px] w-[120px] place-items-center rounded-full bg-white p-4 text-center font-serif text-[.78rem] leading-tight text-plum shadow-lg2 sm:-bottom-7 sm:-right-7 sm:h-[160px] sm:w-[160px] sm:text-[.95rem]">
                 <div>
-                  <strong className="block text-[1.6rem] text-neonpink sm:text-[2.2rem]">10+</strong>
+                  <Counter
+                    target={10}
+                    suffix="+"
+                    className="block text-[1.6rem] text-neonpink sm:text-[2.2rem]"
+                  />
                   Years of styling magic
                 </div>
               </div>
@@ -157,18 +161,12 @@ export default function Home() {
       <section className="py-[70px] lg:py-28">
         <Container>
           <SectionHeader eyebrow="Hire Collection" title="Curated pieces for every story" description="Backdrops, gardens, frames and neon — handpicked elements that bring your vision to life." />
-          <div className="max-w-full overflow-x-auto sm:overflow-visible">
-            <div className="-mx-5 flex snap-x snap-mandatory gap-5 px-5 pb-2 no-scrollbar sm:mx-0 sm:grid sm:snap-none sm:grid-cols-2 sm:gap-7 sm:px-0 sm:pb-0 lg:grid-cols-4">
-              {HIRE_COLLECTION.map((c, i) => (
-                <Reveal
-                  key={c.title}
-                  delay={(i % 4) + 1}
-                  className="min-w-[72%] shrink-0 snap-start sm:min-w-0 sm:shrink"
-                >
+          <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4 lg:gap-7">
+            {HIRE_COLLECTION.map((c, i) => (
+              <Reveal key={c.title} delay={(i % 4) + 1} className="min-w-0 w-full">
                 <HireCard {...c} />
               </Reveal>
             ))}
-            </div>
           </div>
         </Container>
       </section>
@@ -251,7 +249,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-plum to-plumdark py-[70px] text-white lg:py-28">
+      <section className="relative max-w-full overflow-hidden bg-gradient-to-br from-plum to-plumdark py-[70px] text-white lg:py-28">
         <span className="pointer-events-none absolute -left-[100px] -top-[100px] h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,rgba(255,77,157,.18),transparent_70%)]" />
         <span className="pointer-events-none absolute -bottom-[100px] -right-[100px] h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,rgba(180,242,90,.12),transparent_70%)]" />
         <Container className="relative">
