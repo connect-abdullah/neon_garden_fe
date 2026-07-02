@@ -76,12 +76,29 @@ export default function Hero({
               className="h-full w-full object-cover saturate-[1.05]"
             />
           </div>
+          {/* Legibility layers: a flat black wash + a plum-tinted vertical gradient + a soft
+              centre-to-edge vignette so headline copy stays crisp over busy neon imagery. */}
           <div
             className="absolute inset-0 -z-10"
             style={{
-              background: `linear-gradient(180deg, rgba(43,18,51,${overlayOpacity * 0.4}) 0%, rgba(43,18,51,${
-                overlayOpacity * 0.75
-              }) 55%, rgba(43,18,51,${Math.min(overlayOpacity + 0.2, 0.95)}) 100%)`,
+              background: `rgba(0,0,0,${Math.min(overlayOpacity * 0.55, 0.6)})`,
+            }}
+          />
+          <div
+            className="absolute inset-0 -z-10"
+            style={{
+              background: `linear-gradient(180deg, rgba(10,4,14,${overlayOpacity * 0.5}) 0%, rgba(43,18,51,${
+                overlayOpacity * 0.7
+              }) 50%, rgba(10,4,14,${Math.min(overlayOpacity + 0.25, 0.96)}) 100%)`,
+            }}
+          />
+          <div
+            className="absolute inset-0 -z-10"
+            style={{
+              background: `radial-gradient(120% 90% at 50% 42%, transparent 30%, rgba(0,0,0,${Math.min(
+                overlayOpacity * 0.55,
+                0.55
+              )}) 100%)`,
             }}
           />
         </>
@@ -115,7 +132,9 @@ export default function Hero({
 
           <motion.h1
             variants={item}
-            className={`${hasImage ? 'text-white' : ''} ${isCenter ? '' : 'max-w-[16ch]'}`}
+            className={`${hasImage ? 'text-white [text-shadow:0_2px_24px_rgba(0,0,0,.55)]' : ''} ${
+              isCenter ? '' : 'max-w-[16ch]'
+            }`}
           >
             {title}
           </motion.h1>
@@ -124,7 +143,7 @@ export default function Hero({
             <motion.p
               variants={item}
               className={`mt-5 max-w-[640px] text-[1.05rem] leading-relaxed ${
-                hasImage ? 'text-white/85' : 'text-muted'
+                hasImage ? 'text-white/90 [text-shadow:0_1px_14px_rgba(0,0,0,.6)]' : 'text-muted'
               }`}
             >
               {subtitle}

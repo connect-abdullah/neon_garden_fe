@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-[100] border-b backdrop-blur-[14px] backdrop-saturate-150 transition-[background,border-color] duration-300 ${
-        scrolled ? 'border-line bg-cream/95' : 'border-transparent bg-cream/85'
+        scrolled ? 'border-line bg-cream/45' : 'border-transparent bg-cream/80'
       }`}
     >
       <div className="mx-auto flex max-w-container items-center justify-between gap-6 px-5 py-[18px] sm:px-6">

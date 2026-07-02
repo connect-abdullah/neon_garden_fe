@@ -92,8 +92,8 @@ export default function Payments() {
             <Reveal delay={1} className="min-w-0">
               <div className="overflow-hidden rounded-tokenlg border border-line/70 bg-white p-2 shadow-card">
                 <img
-                  src="/assets/images/ng-046.jpg"
-                  alt="Premium event styling"
+                  src="/how_to_pay.jpeg"
+                  alt="'Cheers to love' neon sign above a styled tablescape at a Neon Garden event"
                   loading="lazy"
                   className="aspect-[4/5] w-full rounded-[20px] object-cover transition-transform duration-[900ms] hover:scale-[1.03]"
                 />

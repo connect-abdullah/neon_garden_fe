@@ -25,7 +25,7 @@ export default {
       },
       fontFamily: {
         serif: ['"Cormorant Garamond"', '"Playfair Display"', 'Georgia', 'serif'],
-        sans: ['Inter', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+        sans: ['Poppins', '"Helvetica Neue"', 'Arial', 'sans-serif'],
       },
       maxWidth: {
         container: '1240px',

@@ -49,9 +49,9 @@ export default function Home() {
     <>
       <Hero
         eyebrow="Melbourne · Premium Event Hire"
-        backgroundImage="/assets/images/ng-029.jpg"
-        imageAlt="Elegant event styling by Neon Garden in Melbourne"
-        overlayOpacity={0.65}
+        backgroundImage="/hero_section.jpeg"
+        imageAlt="Neon 'And we danced all night' sign glowing amid florals at a Neon Garden event"
+        overlayOpacity={0.85}
         scrollHint
         title={
           <>
@@ -62,7 +62,7 @@ export default function Home() {
             <br /> in Melbourne
           </>
         }
-        subtitle="Creating unforgettable memories with bespoke décor, neon-lit backdrops, vertical gardens and luxe styling for weddings, nikahs, birthdays and beyond."
+        subtitle="From glowing neon backdrops to lush vertical gardens, we design bespoke event styling that turns weddings, nikahs, birthdays and every celebration into an unforgettable moment."
       >
         <div className="flex flex-wrap justify-center gap-3.5">
           <Button variant="gold" to="/services" iconRight={ArrowRight}>
