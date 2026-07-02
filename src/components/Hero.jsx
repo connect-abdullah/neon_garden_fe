@@ -180,7 +180,7 @@ export default function Hero({
       </Container>
 
       {scrollHint && (
-        <div className="absolute bottom-7 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2.5 text-[.7rem] uppercase tracking-[.3em] text-white/70">
+        <div className="absolute bottom-2 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2.5 text-[.7rem] uppercase tracking-[.3em] text-white/70">
           Scroll
           <span className="h-10 w-px animate-scrollLine bg-white/50" />
         </div>

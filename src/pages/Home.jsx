@@ -64,14 +64,19 @@ export default function Home() {
         }
         subtitle="From glowing neon backdrops to lush vertical gardens, we design bespoke event styling that turns weddings, nikahs, birthdays and every celebration into an unforgettable moment."
       >
-        <div className="flex flex-wrap justify-center gap-3.5">
-          <Button variant="gold" to="/services" iconRight={ArrowRight}>
+        <div className="flex flex-row flex-nowrap justify-center gap-3 sm:flex-wrap sm:gap-3.5">
+          <Button className="text-[10px] sm:text-sm px-2 py-2 sm:px-5 sm:py-2" variant="gold" to="/services" iconRight={ArrowRight}>
             Explore Services
           </Button>
-          <Button variant="light" to="/gallery">
+          <Button className="text-[10px] sm:text-sm px-2 py-2 sm:px-5 sm:py-2" variant="light" to="/gallery">
             View Gallery
           </Button>
-          <Button variant="whatsapp" href={WA_ENQUIRE} icon={WhatsAppIcon}>
+          <Button
+            variant="whatsapp"
+            href={WA_ENQUIRE}
+            icon={WhatsAppIcon}
+            className="hidden sm:inline-flex"
+          >
             WhatsApp Us
           </Button>
         </div>
