@@ -181,8 +181,6 @@ export default function Navbar() {
           />
         </div>
 
-        <div className="border-b border-border p-4">{mobileCtas}</div>
-
         <div className="flex-1 overflow-y-auto px-5 py-2">
           {NAV_LINKS.map((l) => {
             if (!l.children) {
