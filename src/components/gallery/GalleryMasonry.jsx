@@ -45,8 +45,8 @@ export default function GalleryMasonry({
               aria-pressed={filter === f.value}
               className={`shrink-0 rounded-full border px-3.5 py-2 text-[.68rem] font-semibold uppercase tracking-[.08em] transition-all duration-300 sm:px-[22px] sm:py-2.5 sm:text-[.8rem] ${
                 filter === f.value
-                  ? 'border-plum bg-plum text-white shadow-soft'
-                  : 'border-line bg-white text-inksoft hover:-translate-y-0.5 hover:border-neonpink hover:text-neonpink'
+                  ? 'border-forest bg-forest text-white'
+                  : 'border-border bg-white text-body hover:border-forest hover:text-forest'
               }`}
             >
               {f.label}
@@ -57,11 +57,11 @@ export default function GalleryMasonry({
 
       <div className="columns-2 gap-3 sm:gap-4 lg:columns-3 xl:columns-4">
         {visible.map((t, i) => (
-          <GalleryCard key={t.src} src={t.src} onClick={() => setLightboxIndex(i)} />
+          <GalleryCard key={t.src} src={t.src} alt={t.alt} onClick={() => setLightboxIndex(i)} />
         ))}
       </div>
 
-      {hasMore && (
+      {hasMore && step > 0 && (
         <div className="mt-12 flex justify-center">
           <Button variant="primary" icon={Plus} onClick={() => setCount((c) => c + step)}>
             Load More

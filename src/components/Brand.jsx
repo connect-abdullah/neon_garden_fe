@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-// The "NG · Neon Garden / Event Hire" lockup, used in nav and footer.
+// The Neon Garden logo lockup, used in nav and footer.
 export default function Brand({ className = '', smallTone = 'text-golddeep' }) {
   return (
     <Link
@@ -9,9 +9,9 @@ export default function Brand({ className = '', smallTone = 'text-golddeep' }) {
       className={`flex items-center gap-3 font-serif text-[1.5rem] leading-none ${className}`}
     >
       <img
-        src="/assets/images/ng-001.jpg"
+        src="/favicon-512.png"
         alt="Neon Garden Event Hire"
-        className="h-[42px] w-[42px] shrink-0 rounded-full object-cover shadow-[0_0_0_4px_rgba(255,77,157,.12)]"
+        className="h-11 w-11 shrink-0 rounded-full object-cover"
       />
       <span>
         Neon Garden

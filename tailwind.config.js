@@ -5,11 +5,18 @@ export default {
   theme: {
     extend: {
       colors: {
+        forest: '#002c20',
+        'forest-deep': '#001f17',
+        inverse: '#10251f',
+        body: '#5f6461',
+        muted: '#858a87',
+        ivory: '#fbfaf7',
+        blush: '#f6f1ef',
+        border: '#dedfdb',
         cream: '#faf6f1', // --bg
         cream2: '#f3ece2', // --bg-2
         ink: '#2b1233', // --ink / --plum
         inksoft: '#4a2a52', // --ink-soft
-        muted: '#7a6a76', // --muted
         line: 'rgba(43,18,51,.10)', // --line
         plum: '#2b1233',
         plumdark: '#1a0a22', // footer / testimonial gradient end
@@ -25,10 +32,10 @@ export default {
       },
       fontFamily: {
         serif: ['"Cormorant Garamond"', '"Playfair Display"', 'Georgia', 'serif'],
-        sans: ['Poppins', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+        sans: ['Manrope', 'Inter', 'Poppins', '"Helvetica Neue"', 'Arial', 'sans-serif'],
       },
       maxWidth: {
-        container: '1240px',
+        container: '1760px',
       },
       borderRadius: {
         token: '18px', // --radius

@@ -1,46 +1,54 @@
-import PageHero from '../components/PageHero.jsx'
-import CTA from '../components/CTA.jsx'
-import Reveal from '../components/Reveal.jsx'
-import ServiceCard from '../components/cards/ServiceCard.jsx'
+import { Link } from 'react-router-dom'
 import { Container, Button } from '../components/ui.jsx'
-import { ArrowRight, WhatsAppIcon } from '../components/icons.jsx'
-import { WA_ENQUIRE } from '../data/site.js'
+import { ChevronRight } from '../components/icons.jsx'
 import { SERVICES } from '../data/services.js'
 
 export default function Services() {
   return (
     <>
-      <PageHero
-        breadcrumb="Services"
-        eyebrow="Event Styling Services"
-        title="Styling, décor & complete event experiences"
-        subtitle="Choose from our signature services or design something entirely bespoke. Every event is styled by hand with a premium feminine touch."
-      />
-
-      <section className="py-[70px] lg:py-28">
+      <section className="bg-ivory pb-16 pt-[160px] md:pt-[190px]">
         <Container>
-          <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3 lg:gap-7">
-            {SERVICES.map((s, i) => (
-              <Reveal key={s.title} delay={(i % 3) + 1} className="min-w-0 w-full">
-                <ServiceCard {...s} tag="Service" ctaLabel="Enquire Now" to="/contact" />
-              </Reveal>
+          <p className="text-center text-sm uppercase tracking-[0.1em] text-body">Services</p>
+          <h1 className="mt-4 text-center font-serif uppercase text-forest">Event styling services</h1>
+          <p className="mx-auto mt-6 max-w-[820px] text-center text-body">
+            Choose from our signature services or create something bespoke. We design, deliver and install styling that feels elegant and intentional.
+          </p>
+
+          <div className="mt-12 border-y border-border bg-white">
+            {SERVICES.map((item) => (
+              <article
+                key={item.title}
+                className="grid border-b border-border last:border-b-0 md:grid-cols-[260px_1.6fr_80px]"
+              >
+                <Link to="/contact" className="group block h-full overflow-hidden">
+                  <img
+                    src={item.img}
+                    alt={`${item.title} styling service`}
+                    className="h-full min-h-[220px] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                    loading="lazy"
+                  />
+                </Link>
+                <div className="p-6 md:p-8">
+                  <h2 className="font-sans text-2xl text-forest">{item.title}</h2>
+                  <p className="mt-3 max-w-[70ch] text-body">{item.text}</p>
+                  <div className="mt-6">
+                    <Button to="/contact" variant="primary">
+                      Enquire now
+                    </Button>
+                  </div>
+                </div>
+                <Link
+                  to="/contact"
+                  aria-label={`Enquire about ${item.title}`}
+                  className="group grid min-h-[72px] place-items-center border-l border-border bg-forest text-white transition-colors hover:bg-forest-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest md:min-h-full"
+                >
+                  <ChevronRight size={20} className="transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </article>
             ))}
           </div>
         </Container>
       </section>
-
-      <CTA
-        backgroundVariant="blush"
-        title="Book your event styling"
-        description="Tell us about your celebration and we'll respond within 24 hours with a tailored proposal."
-      >
-        <Button variant="primary" to="/contact" iconRight={ArrowRight}>
-          Plan My Event
-        </Button>
-        <Button variant="whatsapp" href={WA_ENQUIRE} icon={WhatsAppIcon}>
-          WhatsApp Us
-        </Button>
-      </CTA>
     </>
   )
 }

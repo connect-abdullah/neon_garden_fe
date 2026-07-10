@@ -1,143 +1,113 @@
-import PageHero from '../components/PageHero.jsx'
-import SectionHeader from '../components/SectionHeader.jsx'
-import CTA from '../components/CTA.jsx'
-import Reveal from '../components/Reveal.jsx'
-import FeatureCard from '../components/cards/FeatureCard.jsx'
-import { Container, Button, Eyebrow } from '../components/ui.jsx'
-import {
-  ArrowRight,
-  Lightbulb,
-  Palette,
-  Truck,
-  Sparkles,
-  Users,
-  Heart,
-  Gem,
-  Briefcase,
-  Clock,
-  WhatsAppIcon,
-} from '../components/icons.jsx'
+import { Link } from 'react-router-dom'
+import { Container, Button } from '../components/ui.jsx'
+import { ArrowRight } from '../components/icons.jsx'
 import { WA_ENQUIRE } from '../data/site.js'
-import { APPROACH, WHY_ABOUT } from '../data/about.js'
-
-const APPROACH_ICONS = [Lightbulb, Palette, Truck]
-const WHY_ICONS = [Sparkles, Users, Heart, Gem, Briefcase, Clock]
+import { ABOUT_PROCESS, ABOUT_VALUES } from '../data/about.js'
+import { siteImages } from '../data/images.js'
 
 export default function About() {
   return (
     <>
-      <PageHero
-        breadcrumb="About"
-        eyebrow="Our Story"
-        title="Designing celebrations with heart, detail and a soft glow."
-        subtitle="A Melbourne-based event styling studio — equal parts editorial, modern and feminine — created to make your most loved moments feel truly unforgettable."
-      />
+      <section className="relative flex min-h-[50svh] items-end overflow-hidden pb-12 pt-[150px] text-white md:pt-[180px]">
+        <img
+          src={siteImages.about.hero}
+          alt="Neon Garden styled wedding reception"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,20,14,0.12)_0%,rgba(0,20,14,0.42)_45%,rgba(0,20,14,0.78)_100%)]" />
+        <Container className="relative">
+          <p className="text-xs uppercase tracking-[0.1em] text-white/85">About Neon Garden</p>
+          <h1 className="mt-5 max-w-[18ch] font-serif uppercase leading-[0.95] text-white">
+            Premium event styling with editorial detail.
+          </h1>
+          <p className="mt-6 max-w-[70ch] text-white/90">
+            Neon Garden Event Hire creates elegant event styling and hire experiences across Melbourne — from intimate proposals to full reception styling, with careful attention to florals, backdrops and guest-facing details.
+          </p>
+          <Link
+            to="/contact"
+            className="mt-7 inline-flex items-center gap-2 border-b border-white pb-1 text-sm uppercase tracking-[0.08em]"
+          >
+            Start Your Enquiry <ArrowRight size={16} />
+          </Link>
+        </Container>
+      </section>
 
-      {/* Brand story */}
-      <section className="py-[70px] lg:py-28">
+      <section className="bg-ivory py-16 md:py-24">
         <Container>
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-[90px]">
-            <Reveal>
-              <div className="overflow-hidden rounded-tokenlg shadow-lg2">
-                <img
-                  src="/assets/images/ng-074.jpg"
-                  alt="Neon Garden styled wedding arch in Melbourne"
-                  loading="lazy"
-                  className="aspect-[4/5] w-full object-cover transition-transform duration-[900ms] hover:scale-[1.04]"
-                />
-              </div>
-            </Reveal>
-            <Reveal delay={1}>
-              <Eyebrow>Brand Story</Eyebrow>
-              <h2 className="mb-[18px] mt-3">It started with a single neon sign — and a love for the garden.</h2>
-              <p className="mb-3.5 text-[1.05rem]">
-                Neon Garden Event Hire was born from a simple obsession: a soft neon glow paired with lush greenery and
-                the perfect floral moment. What began as a small collection of backdrops and signs has blossomed into
-                Melbourne's go-to studio for premium event hire and styling.
+          <div className="grid items-center gap-12 lg:grid-cols-[1fr_0.95fr] lg:gap-16 xl:gap-24">
+            <div>
+              <p className="text-xs uppercase tracking-[0.12em] text-body">Our Approach</p>
+              <h2 className="mt-5 max-w-[14ch] font-serif uppercase leading-[0.98] text-forest">
+                Every event is curated by hand.
+              </h2>
+              <p className="mt-6 max-w-[52ch] text-lg leading-relaxed text-body md:text-[1.2rem] md:leading-[1.7]">
+                We style events around each client&apos;s palette, venue, story and occasion — balancing editorial composition with practical guest experience.
               </p>
-              <p className="mb-3.5 text-[1.05rem]">
-                We work alongside couples, families and event planners across Melbourne, transforming venues into
-                beautifully curated experiences — from intimate Nikah ceremonies to grand wedding receptions and
-                milestone birthdays.
-              </p>
-            </Reveal>
+            </div>
+            <div className="overflow-hidden lg:justify-self-end">
+              <img
+                src={siteImages.about.feature}
+                alt="Complete styled event table with floral installation"
+                className="aspect-[4/5] w-full max-w-[520px] object-cover lg:aspect-[5/6] lg:max-h-[580px] lg:max-w-none"
+                loading="lazy"
+              />
+            </div>
           </div>
         </Container>
       </section>
 
-      {/* Mission (reversed) */}
-      <section className="bg-cream2 py-[70px] lg:py-28">
+      <section className="bg-blush py-14 md:py-20">
         <Container>
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-[90px]">
-            <Reveal delay={1} className="lg:order-2">
-              <div className="overflow-hidden rounded-tokenlg shadow-lg2">
-                <img
-                  src="/assets/images/ng-088.jpg"
-                  alt="Neon 'Oh It's Perfect' sign framed by tropical greenery and balloons at a Neon Garden event"
-                  loading="lazy"
-                  className="aspect-[4/5] w-full object-cover transition-transform duration-[900ms] hover:scale-[1.04]"
-                />
+          <div className="grid gap-10 md:grid-cols-3">
+            {ABOUT_VALUES.map((item) => (
+              <div key={item.title}>
+                <p className="text-xs uppercase tracking-[0.1em] text-body">{item.eyebrow}</p>
+                <h3 className="mt-3 font-sans text-2xl text-forest">{item.title}</h3>
+                <p className="mt-3 text-body">{item.text}</p>
               </div>
-            </Reveal>
-            <Reveal className="lg:order-1">
-              <Eyebrow>Our Mission</Eyebrow>
-              <h2 className="mb-[18px] mt-3">Beautiful events, effortlessly delivered.</h2>
-              <p className="mb-3.5 text-[1.05rem]">
-                We believe styling your event should feel exciting, not stressful. From the first enquiry through to
-                pack-down, we take care of every detail with calm, creative energy — so you can be fully present on the
-                day that matters.
-              </p>
-              <p className="mb-3.5 text-[1.05rem]">
-                Our promise is simple: design that feels editorial, service that feels personal, and memories that feel
-                forever.
-              </p>
-            </Reveal>
-          </div>
-        </Container>
-      </section>
-
-      {/* Approach */}
-      <section className="py-[70px] lg:py-28">
-        <Container>
-          <SectionHeader eyebrow="Our Approach" title="Styled by hand. Designed for you." />
-          <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-            {APPROACH.map((a, i) => (
-              <Reveal key={a.title} delay={(i % 3) + 1}>
-                <FeatureCard icon={APPROACH_ICONS[i % APPROACH_ICONS.length]} title={a.title} text={a.text} />
-              </Reveal>
             ))}
           </div>
         </Container>
       </section>
 
-      {/* Why choose us */}
-      <section className="bg-cream2 py-[70px] lg:py-28">
+      <section className="bg-ivory py-14 md:py-20">
         <Container>
-          <SectionHeader eyebrow="Why Customers Choose Us" title="Premium event hire — without the fuss" />
-          <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-            {WHY_ABOUT.map((w, i) => (
-              <Reveal key={w.title} delay={(i % 3) + 1}>
-                <FeatureCard icon={WHY_ICONS[i % WHY_ICONS.length]} title={w.title} text={w.text} />
-              </Reveal>
-            ))}
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <p className="text-xs uppercase tracking-[0.1em] text-body">Our Process</p>
+              <h2 className="mt-4 font-serif text-4xl text-forest">From first message to pack-down.</h2>
+            </div>
+            <div className="divide-y divide-border border-y border-border">
+              {ABOUT_PROCESS.map((item) => (
+                <article key={item.step} className="grid gap-3 py-6 md:grid-cols-[56px_1fr]">
+                  <p className="text-sm uppercase tracking-[0.08em] text-muted">{item.step}</p>
+                  <div>
+                    <h3 className="font-sans text-xl text-forest">{item.title}</h3>
+                    <p className="mt-2 text-body">{item.text}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </Container>
       </section>
 
-      {/* CTA */}
-      <CTA
-        backgroundVariant="plum"
-        icon={Heart}
-        title="Let's create something unforgettable"
-        description="Whether you have a clear vision or just a feeling — we'd love to bring it to life with you."
-      >
-        <Button variant="light" to="/contact" iconRight={ArrowRight}>
-          Enquire Now
-        </Button>
-        <Button variant="whatsapp" href={WA_ENQUIRE} icon={WhatsAppIcon}>
-          WhatsApp Us
-        </Button>
-      </CTA>
+      <section className="bg-forest py-16 text-white">
+        <Container className="text-center">
+          <h2 className="font-serif uppercase text-white">Ready to plan your event?</h2>
+          <p className="mx-auto mt-4 max-w-[620px] text-white/80">
+            Share your celebration details and we will guide you with the best styling direction.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Button to="/contact" variant="light" iconRight={ArrowRight}>
+              Enquire Now
+            </Button>
+            <Button href={WA_ENQUIRE} variant="outlineLight">
+              WhatsApp Us
+            </Button>
+          </div>
+        </Container>
+      </section>
     </>
   )
 }

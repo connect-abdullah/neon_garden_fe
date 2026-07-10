@@ -6,6 +6,7 @@ const VARIANTS = {
   soft: 'bg-plum/5 text-plum hover:bg-neonpink hover:text-white',
   outline: 'border border-line text-plum hover:border-neonpink hover:text-neonpink',
   ghostLight: 'text-white/80 hover:bg-white/10 hover:text-white',
+  plain: '',
   whatsapp: 'bg-whatsapp text-white hover:bg-whatsappdark',
 }
 

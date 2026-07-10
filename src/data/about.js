@@ -1,16 +1,42 @@
 // About page content.
 
-export const APPROACH = [
-  { icon: '◐', title: 'Discover', text: 'We start with a conversation — your vibe, your venue, your vision — to map out the perfect concept.' },
-  { icon: '◑', title: 'Design', text: 'Mood boards, palettes and styling proposals tailored to your event and brought to life with our hire collection.' },
-  { icon: '◉', title: 'Deliver', text: 'Our team handles set-up, styling and pack-down so every detail lands beautifully on the day.' },
+export const ABOUT_VALUES = [
+  {
+    eyebrow: 'Bespoke Styling',
+    title: 'Designed around your story',
+    text: 'Every set-up is custom designed around your palette, venue and occasion.',
+  },
+  {
+    eyebrow: 'Premium Inventory',
+    title: 'Curated hire collection',
+    text: 'An ever-growing collection of backdrops, florals, frames and neon styling pieces.',
+  },
+  {
+    eyebrow: 'Effortless Service',
+    title: 'Handled from setup to pack-down',
+    text: 'Delivery, installation and pack-down managed so you can enjoy the moment.',
+  },
 ]
 
-export const WHY_ABOUT = [
-  { icon: '✦', title: 'Editorial Aesthetic', text: 'Every set-up is composed like a story — clean lines, balanced palettes, photo-worthy details.' },
-  { icon: '✿', title: 'Trusted by Hundreds', text: 'From quiet proposals to 300-guest weddings — our clients return for every milestone.' },
-  { icon: '✧', title: 'Local & Personal', text: 'A Melbourne studio with a hands-on team that treats your event like our own.' },
-  { icon: '◆', title: 'Premium Inventory', text: 'Continually refreshed with new backdrops, frames, gardens and neons.' },
-  { icon: '◇', title: 'Flexible Packages', text: 'Tailored hire packages that suit intimate gatherings and large celebrations.' },
-  { icon: '✦', title: 'On-Time, Always', text: 'Reliable delivery, set-up and pack-down across Melbourne metro.' },
+export const ABOUT_PROCESS = [
+  {
+    step: '01',
+    title: 'Enquiry',
+    text: 'Share your date, venue, event type and styling vision with our team.',
+  },
+  {
+    step: '02',
+    title: 'Concept',
+    text: 'We prepare a tailored styling direction based on your brief and hire options.',
+  },
+  {
+    step: '03',
+    title: 'Refine',
+    text: 'We confirm details, inclusions and logistics ahead of your event day.',
+  },
+  {
+    step: '04',
+    title: 'Event Day',
+    text: 'Our team delivers, styles and packs down with calm, professional care.',
+  },
 ]

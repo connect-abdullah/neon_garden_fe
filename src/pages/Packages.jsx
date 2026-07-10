@@ -1,51 +1,45 @@
-import PageHero from '../components/PageHero.jsx'
-import SectionHeader from '../components/SectionHeader.jsx'
-import Reveal from '../components/Reveal.jsx'
-import PackageCard from '../components/cards/PackageCard.jsx'
-import { Container, Button } from '../components/ui.jsx'
-import { ArrowRight, WhatsAppIcon } from '../components/icons.jsx'
-import { WA_ENQUIRE } from '../data/site.js'
+import { Link } from 'react-router-dom'
+import { Container } from '../components/ui.jsx'
+import { ArrowRight } from '../components/icons.jsx'
+import PackageRow from '../components/packages/PackageRow.jsx'
+import CTA from '../components/CTA.jsx'
 import { PACKAGES } from '../data/packages.js'
+import { WA_ENQUIRE } from '../data/site.js'
 
 export default function Packages() {
   return (
     <>
-      <PageHero
-        breadcrumb="Packages"
-        eyebrow="Packages & Inspiration"
-        title="Trending styling packages"
-        subtitle="Our most-loved styling concepts — mix, match or bundle into a full package for a complete event look."
-      />
-
-      <section className="py-[70px] lg:py-28">
+      <section className="bg-ivory pb-10 pt-[130px] md:pb-16 md:pt-[190px]">
         <Container>
-          <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
-            {PACKAGES.map((p, i) => (
-              <Reveal key={p.num} delay={(i % 3) + 1} className="min-w-0 w-full">
-                <PackageCard {...p} to="/contact" />
-              </Reveal>
+          <p className="text-center text-sm uppercase tracking-[0.1em] text-body">Packages</p>
+          <h1 className="mt-4 text-center font-serif uppercase text-forest">Our Styling Packages</h1>
+          <p className="mx-auto mt-5 max-w-[640px] text-center text-body">
+            Curated styling packages for engagements, birthdays, weddings and intimate celebrations across Melbourne.
+          </p>
+          <div className="mt-8 flex justify-center">
+            <Link to="/contact" className="inline-flex items-center gap-2 border-b border-forest pb-1 text-sm uppercase tracking-[0.08em] text-forest">
+              Explore Picnic Packages <ArrowRight size={15} />
+            </Link>
+          </div>
+
+          <div className="mt-10 border-y border-border md:mt-12">
+            {PACKAGES.map((item) => (
+              <PackageRow key={item.slug} item={item} />
             ))}
           </div>
         </Container>
       </section>
 
-      <section className="bg-cream2 py-[70px] lg:py-28">
-        <Container>
-          <SectionHeader
-            eyebrow="The Full Package"
-            title="Everything you need, beautifully bundled"
-            description="Skip the guesswork — our Full Package combines the backdrop, garden, frames, neon and signage into one curated styling experience."
-          />
-          <Reveal className="flex flex-wrap justify-center gap-3.5">
-            <Button variant="primary" to="/contact" iconRight={ArrowRight}>
-              Enquire About Packages
-            </Button>
-            <Button variant="ghost" href={WA_ENQUIRE} icon={WhatsAppIcon}>
-              WhatsApp Us
-            </Button>
-          </Reveal>
-        </Container>
-      </section>
+      <CTA
+        eyebrow="Ready to book?"
+        title="Let's design your celebration"
+        description="Tell us your date, venue and guest count — we'll recommend the best styling direction and package for your event."
+        buttonText="Plan My Event"
+        buttonTo="/contact"
+        secondaryText="WhatsApp Us"
+        secondaryHref={WA_ENQUIRE}
+        rounded
+      />
     </>
   )
 }

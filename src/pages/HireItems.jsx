@@ -1,77 +1,70 @@
-import PageHero from '../components/PageHero.jsx'
+import { Link } from 'react-router-dom'
+import { Container } from '../components/ui.jsx'
+import { ArrowRight } from '../components/icons.jsx'
 import CTA from '../components/CTA.jsx'
-import Reveal from '../components/Reveal.jsx'
-import { Container, Button, Eyebrow } from '../components/ui.jsx'
-import { ArrowRight, CheckCircle, WhatsAppIcon } from '../components/icons.jsx'
-import { WA_ENQUIRE } from '../data/site.js'
 import { HIRE_ITEMS } from '../data/hireItems.js'
+import { siteImages } from '../data/images.js'
 
 export default function HireItems() {
   return (
     <>
-      <PageHero
-        breadcrumb="Hire Items"
-        eyebrow="Our Collection"
-        title="Premium pieces, ready for your event"
-        subtitle="Explore our signature collection of backdrops, vertical gardens, frames and neon — hire individually or as a styled package."
-      />
+      <section className="relative flex min-h-[50svh] items-end overflow-hidden pb-12 pt-[150px] text-white md:pt-[180px]">
+        <img
+          src={siteImages.hireItems.hero}
+          alt="Sculptural frame and floral hire styling"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-[rgba(0,20,14,0.52)]" />
+        <Container className="relative">
+          <p className="text-xs uppercase tracking-[0.1em] text-white/85">Hire Collection</p>
+          <h1 className="mt-4 max-w-[16ch] font-serif uppercase text-white">Curated pieces for every story.</h1>
+          <p className="mt-5 max-w-[70ch] text-white/90">
+            Hire backdrops, gardens, frames, neon signs and styling pieces as package add-ons or standalone items for your celebration.
+          </p>
+          <Link
+            to="/contact"
+            className="mt-7 inline-flex items-center gap-2 border-b border-white pb-1 text-sm uppercase tracking-[0.08em]"
+          >
+            Start Your Enquiry <ArrowRight size={16} />
+          </Link>
+        </Container>
+      </section>
 
-      <section className="py-[70px] lg:py-28">
+      <section className="bg-ivory py-14 md:py-20">
         <Container>
-          <div className="flex flex-col gap-8 lg:gap-12">
-            {HIRE_ITEMS.map((item, i) => (
-              <Reveal
-                key={item.title}
-                className="card-hover grid overflow-hidden rounded-tokenlg border border-line/60 bg-white shadow-card hover:shadow-cardhover md:grid-cols-2"
-              >
-                <div className={`group aspect-[5/4] overflow-hidden md:aspect-auto ${i % 2 === 1 ? 'md:order-2' : ''}`}>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {HIRE_ITEMS.map((item) => (
+              <article key={item.title} className="group">
+                <div className="overflow-hidden">
                   <img
                     src={item.img}
-                    alt={`${item.title} for hire Melbourne`}
+                    alt={`${item.title} available for hire in Melbourne`}
                     loading="lazy"
-                    decoding="async"
-                    className="h-full w-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
+                    className="aspect-[4/5] w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                   />
                 </div>
-                <div className={`flex flex-col justify-center gap-4 p-8 sm:p-[50px] ${i % 2 === 1 ? 'md:order-1' : ''}`}>
-                  <Eyebrow>Hire Collection</Eyebrow>
-                  <h2 className="text-[clamp(1.7rem,3vw,2.4rem)]">{item.title}</h2>
-                  <p className="text-[1.05rem] leading-relaxed">{item.text}</p>
-                  <ul className="my-1 flex flex-col gap-2.5">
-                    {item.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2.5 text-inksoft">
-                        <CheckCircle size={19} className="mt-0.5 shrink-0 text-greendeep" aria-hidden="true" />
-                        <span>{f}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-2 flex flex-wrap gap-3.5">
-                    <Button variant="primary" to="/contact" iconRight={ArrowRight}>
-                      Enquire Now
-                    </Button>
-                    <Button variant="ghost" href={WA_ENQUIRE} icon={WhatsAppIcon}>
-                      WhatsApp
-                    </Button>
-                  </div>
-                </div>
-              </Reveal>
+                <h2 className="mt-4 font-serif text-2xl text-forest">{item.title}</h2>
+                <p className="mt-2 text-sm text-body">{item.text}</p>
+                <Link
+                  to="/contact"
+                  className="mt-3 inline-flex items-center gap-1 text-xs uppercase tracking-[0.08em] text-forest"
+                >
+                  Enquire <ArrowRight size={14} />
+                </Link>
+              </article>
             ))}
           </div>
         </Container>
       </section>
 
       <CTA
-        backgroundVariant="plum"
-        title="Not sure what you need?"
-        description="Send us your event details — we'll suggest the perfect combination of hire items and styling."
-      >
-        <Button variant="light" to="/contact" iconRight={ArrowRight}>
-          Get Recommendations
-        </Button>
-        <Button variant="whatsapp" href={WA_ENQUIRE} icon={WhatsAppIcon}>
-          WhatsApp Us
-        </Button>
-      </CTA>
+        title="Need help choosing hire pieces?"
+        description="Tell us your event details and we will recommend the best combination of hire items and styling."
+        buttonText="Start Your Enquiry"
+        buttonTo="/contact"
+        fullWidth
+        rounded={false}
+      />
     </>
   )
 }

@@ -18,7 +18,6 @@ A premium, mobile-first website for **Neon Garden Event Hire**, Melbourne's bout
 | `/hire-items` | Hire Items | Backdrops, vertical gardens, frames, neon lights |
 | `/gallery` | Gallery | Filterable masonry of real event imagery + lightbox |
 | `/packages` | Packages | Trending styling packages and inspiration |
-| `/payments` | Payments | Deposit, full and custom PayPal payment CTAs |
 | `/contact` | Contact | WhatsApp, phone, email, address, enquiry form, map |
 
 ## Project structure
@@ -50,10 +49,9 @@ npm run preview # preview the production build
 
 ## Things to customise before going live
 
-1. **PayPal links** — in `src/data/payments.js`, replace the three `paypalme/REPLACE_ME` URLs with your real PayPal.me handle.
-2. **Google Map embed** — `CONTACT.mapEmbed` in `src/data/site.js`.
-3. **Instagram handle** — `CONTACT.instagram` in `src/data/site.js`.
-4. **WhatsApp number** — `WHATSAPP_NUMBER` in `src/data/site.js` (used by every WhatsApp link, the floating button, and the contact form).
+1. **Google Map embed** — `CONTACT.mapEmbed` in `src/data/site.js`.
+2. **Instagram handle** — `CONTACT.instagram` in `src/data/site.js`.
+3. **WhatsApp number** — `WHATSAPP_NUMBER` in `src/data/site.js` (used by every WhatsApp link, the floating button, and the contact form).
 
 ## Features
 

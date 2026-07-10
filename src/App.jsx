@@ -6,7 +6,7 @@ import Services from './pages/Services.jsx'
 import HireItems from './pages/HireItems.jsx'
 import Gallery from './pages/Gallery.jsx'
 import Packages from './pages/Packages.jsx'
-import Payments from './pages/Payments.jsx'
+import PackageDetail from './pages/PackageDetail.jsx'
 import Contact from './pages/Contact.jsx'
 
 export default function App() {
@@ -19,7 +19,7 @@ export default function App() {
         <Route path="/hire-items" element={<HireItems />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/packages" element={<Packages />} />
-        <Route path="/payments" element={<Payments />} />
+        <Route path="/packages/:slug" element={<PackageDetail />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Home />} />
       </Route>

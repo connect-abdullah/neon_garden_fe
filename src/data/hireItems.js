@@ -1,27 +1,54 @@
-// Hire Items page — alternating feature cards.
+import { siteImages } from './images.js'
+
 export const HIRE_ITEMS = [
   {
-    title: 'Statement backdrops',
-    img: '/assets/images/ng-013.jpg',
-    text: 'Custom-built backdrop walls in arched, circular and rectangular shapes — finished with florals, fabric or neon.',
-    features: ['Floral, sequin, fabric & boho finishes', 'Custom colour and shape options', 'Perfect for photos & ceremonies'],
+    title: 'Statement Backdrops',
+    img: siteImages.hireItems.backdrops,
+    text: 'Custom-built backdrop walls in arched, circular and rectangular shapes.',
   },
   {
-    title: 'Lush vertical gardens',
-    img: '/assets/images/ng-028.jpg',
-    text: 'Floor-to-ceiling vertical gardens that bring botanical luxury into any venue — with the option to add custom name inserts and neon.',
-    features: ['Premium artificial greenery', 'Custom name inserts available', 'Pairs beautifully with neon signs'],
+    title: 'Floral Backdrops',
+    img: siteImages.hireItems.floralBackdrops,
+    text: 'Lush floral walls and soft botanical finishes for photo-ready moments.',
   },
   {
-    title: 'Sculptural frames',
-    img: '/assets/images/ng-043.jpg',
-    text: 'Round, arched and rectangular frames styled with florals, drapery and signage to create a focal moment.',
-    features: ['Gold, white & rose-gold finishes', 'Available in multiple sizes', 'Perfect for entryways & photo moments'],
+    title: 'Vertical Gardens',
+    img: siteImages.hireItems.verticalGardens,
+    text: 'Floor-to-ceiling greenery walls with optional custom inserts and neon.',
   },
   {
-    title: 'Custom neon signs',
-    img: '/assets/images/ng-061.jpg',
-    text: 'From timeless love quotes to custom names — our neon signs add a modern, glowing touch to any styling set-up.',
-    features: ['LED neon, safe & energy-efficient', 'Custom designs available', 'Hire alongside any backdrop or frame'],
+    title: 'Sculptural Frames',
+    img: siteImages.hireItems.frames,
+    text: 'Round, arched and rectangular frames styled with florals and drapery.',
+  },
+  {
+    title: 'Neon Lights',
+    img: siteImages.hireItems.neon,
+    text: 'Custom neon quotes, names and statements for a modern glowing touch.',
+  },
+  {
+    title: 'Custom Signage',
+    img: siteImages.hireItems.customSignage,
+    text: 'Welcome boards, acrylic signs and personalised event signage.',
+  },
+  {
+    title: 'Arches',
+    img: siteImages.hireItems.arches,
+    text: 'Statement ceremony and reception arches finished with florals and fabric.',
+  },
+  {
+    title: 'Dessert Tables',
+    img: siteImages.hireItems.dessertTables,
+    text: 'Styled dessert and cake presentation areas with layered decor details.',
+  },
+  {
+    title: 'Table Styling',
+    img: siteImages.hireItems.tableStyling,
+    text: 'Curated tablescapes with florals, candles, runners and finishing accents.',
+  },
+  {
+    title: 'Floral Installations',
+    img: siteImages.hireItems.floralInstallations,
+    text: 'Feature florals and installation moments tailored to your event palette.',
   },
 ]

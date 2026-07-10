@@ -1,3 +1,5 @@
+import { siteImages } from './images.js'
+
 // Home page content blocks.
 
 export const STATS = [
@@ -11,62 +13,62 @@ export const FEATURED_SERVICES = [
   {
     title: 'Weddings',
     tag: 'Signature',
-    img: '/assets/images/ng-041.jpg',
+    img: siteImages.services.weddings,
     text: 'From the ceremony arch to the reception aisle — full bridal styling that feels timeless and luxurious.',
   },
   {
     title: 'Birthday Décor',
     tag: 'Most Loved',
-    img: '/assets/images/ng-045.jpg',
+    img: siteImages.services.birthdays,
     text: 'Show-stopping backdrops, balloon installations and styling for milestone birthdays.',
   },
   {
     title: 'Nikah & Henna',
     tag: 'Cultural',
-    img: '/assets/images/ng-049.jpg',
+    img: siteImages.services.nikahHenna,
     text: 'Elegant Nikah ceremonies and vibrant Henna nights designed with love and tradition in mind.',
   },
   {
     title: 'Baby Showers',
     tag: 'Soft & Sweet',
-    img: '/assets/images/ng-054.jpg',
+    img: siteImages.services.babyShowers,
     text: 'Whimsical, pastel-soft set-ups perfect for celebrating new arrivals.',
   },
   {
     title: 'Engagements',
     tag: 'Romantic',
-    img: '/assets/images/ng-060.jpg',
+    img: siteImages.services.engagements,
     text: 'Romantic, photo-worthy moments crafted to feel intimate and unforgettable.',
   },
   {
     title: 'Bridal Showers',
     tag: 'Editorial',
-    img: '/assets/images/ng-064.jpg',
+    img: siteImages.services.bridalShowers,
     text: 'Boutique-style bridal showers with luxe florals and curated tablescapes.',
   },
 ]
 
 export const HIRE_COLLECTION = [
-  { title: 'Backdrops', img: '/assets/images/ng-064.jpg' },
-  { title: 'Vertical Gardens', img: '/assets/images/ng-067.jpg' },
-  { title: 'Frames', img: '/assets/images/ng-070.jpg' },
-  { title: 'Neon Lights', img: '/assets/images/ng-073.jpg' },
+  { title: 'Backdrops', img: siteImages.hireItems.backdrops },
+  { title: 'Vertical Gardens', img: siteImages.hireItems.verticalGardens },
+  { title: 'Frames', img: siteImages.hireItems.frames },
+  { title: 'Neon Lights', img: siteImages.hireItems.neon },
 ]
 
 export const INSPIRATION = [
   {
     title: 'Instagrammable Corners',
-    img: '/assets/images/ng-084.jpg',
+    img: siteImages.gallery[0].src,
     text: 'Photo-ready moments built for sharing.',
   },
   {
     title: 'Guest Photo Wall',
-    img: '/assets/images/ng-087.jpg',
+    img: siteImages.gallery[1].src,
     text: 'Statement walls that say it all.',
   },
   {
     title: 'Entry Tables & Centre Pieces',
-    img: '/assets/images/ng-090.jpg',
+    img: siteImages.gallery[2].src,
     text: 'Welcome guests with elevated detail.',
   },
 ]
@@ -90,12 +92,12 @@ export const WHY_HOME = [
 ]
 
 export const INSTA_STRIP = [
-  '/assets/images/ng-004.jpg',
-  '/assets/images/ng-009.jpg',
-  '/assets/images/ng-014.jpg',
-  '/assets/images/ng-019.jpg',
-  '/assets/images/ng-024.jpg',
-  '/assets/images/ng-029.jpg',
+  siteImages.gallery[3].src,
+  siteImages.gallery[4].src,
+  siteImages.gallery[5].src,
+  siteImages.gallery[6].src,
+  siteImages.gallery[7].src,
+  siteImages.gallery[8].src,
 ]
 
 export const TESTIMONIALS = [

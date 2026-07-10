@@ -1,61 +1,71 @@
-import PageHero from '../components/PageHero.jsx'
-import Reveal from '../components/Reveal.jsx'
-import ContactInfoCard from '../components/contact/ContactInfoCard.jsx'
 import ContactForm from '../components/contact/ContactForm.jsx'
 import MapCard from '../components/contact/MapCard.jsx'
 import { Container } from '../components/ui.jsx'
-import { Phone, Mail, MapPin, WhatsAppIcon, InstagramIcon } from '../components/icons.jsx'
-import { CONTACT, EVENT_TYPES, waLink } from '../data/site.js'
+import { Phone, Mail, MapPin, InstagramIcon } from '../components/icons.jsx'
+import { CONTACT, EVENT_TYPES, WA_ENQUIRE } from '../data/site.js'
+import { siteImages } from '../data/images.js'
 
-const INFO = [
-  { icon: Phone, title: 'Phone', href: CONTACT.phoneTel, text: CONTACT.phoneDisplay },
-  {
-    icon: WhatsAppIcon,
-    title: 'WhatsApp',
-    href: waLink("Hi Neon Garden, I'd love to enquire about event styling."),
-    text: 'Chat instantly on WhatsApp',
-    external: true,
-  },
-  { icon: Mail, title: 'Email', href: CONTACT.emailLink, text: CONTACT.email },
-  { icon: MapPin, title: 'Studio', text: CONTACT.address },
-  {
-    icon: InstagramIcon,
-    title: 'Instagram',
-    href: CONTACT.instagram,
-    text: `${CONTACT.instagramHandle} — DM for Collab`,
-    external: true,
-  },
+const DETAILS = [
+  { icon: Phone, label: 'Phone / WhatsApp', value: CONTACT.phoneDisplay, href: WA_ENQUIRE, external: true },
+  { icon: Mail, label: 'Email', value: CONTACT.email, href: CONTACT.emailLink },
+  { icon: InstagramIcon, label: 'Instagram', value: CONTACT.instagramHandle, href: CONTACT.instagram, external: true },
+  { icon: MapPin, label: 'Service Area', value: 'Melbourne & surrounding suburbs' },
 ]
 
 export default function Contact() {
   return (
-    <>
-      <PageHero
-        breadcrumb="Contact"
-        eyebrow="Let's Talk"
-        title="Plan your event with us"
-        subtitle="Tell us about your celebration — we'll reply within 24 hours with availability and a styling proposal."
-      />
+    <section className="bg-ivory pb-16 pt-[140px] md:pb-24 md:pt-[170px]">
+      <Container>
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
+          <div>
+            <p className="text-xs uppercase tracking-[0.1em] text-body">Contact</p>
+            <h1 className="mt-4 max-w-[14ch] font-serif uppercase leading-[0.95] text-forest">
+              Let&apos;s plan something beautiful.
+            </h1>
+            <p className="mt-6 max-w-[52ch] text-body">
+              Share your date, venue, event type and styling vision. Our team will respond with availability and a tailored proposal.
+            </p>
 
-      <section className="py-[70px] lg:py-28">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-2 lg:gap-[50px]">
-            <Reveal className="flex flex-col gap-4">
-              {INFO.map((item) => (
-                <ContactInfoCard key={item.title} {...item} />
+            <ul className="mt-10 space-y-5 border-t border-border pt-8">
+              {DETAILS.map((item) => (
+                <li key={item.label} className="flex items-start gap-3">
+                  <item.icon size={18} className="mt-0.5 shrink-0 text-forest" aria-hidden="true" />
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.08em] text-muted">{item.label}</p>
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                        className="mt-1 inline-block text-forest hover:underline"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      <p className="mt-1 text-forest">{item.value}</p>
+                    )}
+                  </div>
+                </li>
               ))}
-            </Reveal>
+            </ul>
 
-            <Reveal delay={1}>
-              <ContactForm eventTypes={EVENT_TYPES} />
-            </Reveal>
+  
           </div>
 
-          <Reveal className="mt-10 lg:mt-[60px]">
-            <MapCard mapEmbed={CONTACT.mapEmbed} address={CONTACT.address} />
-          </Reveal>
-        </Container>
-      </section>
-    </>
+          <div>
+            <ContactForm eventTypes={EVENT_TYPES} />
+            <img
+              src={siteImages.contactFeature}
+              alt="Styled event table with floral details"
+              className="mt-8 aspect-[4/3] w-full object-cover lg:hidden"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <div className="mt-14 lg:mt-20">
+          <MapCard mapEmbed={CONTACT.mapEmbed} address={CONTACT.address} />
+        </div>
+      </Container>
+    </section>
   )
 }

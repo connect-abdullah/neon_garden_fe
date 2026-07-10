@@ -4,19 +4,18 @@ import { Container } from './ui.jsx'
 import { InstagramIcon, WhatsAppIcon, Mail, MapPin, Phone, Clock } from './icons.jsx'
 import { CONTACT, FOOTER_EXPLORE, WA_ENQUIRE, WA_COLLAB } from '../data/site.js'
 
-const linkCls = 'inline-block py-1 text-[.92rem] text-white/70 transition-colors hover:text-neonpink'
+const linkCls = 'inline-block py-1 text-[.92rem] text-white/75 transition-colors hover:text-white'
 
 export default function Footer() {
   const year = new Date().getFullYear()
   return (
-    <footer className="bg-plumdark pb-[30px] pt-20 text-white/70">
+    <footer className="bg-forest pb-10 pt-20 text-white/80">
       <Container>
-        <div className="mb-[50px] grid gap-[50px] md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        <div className="mb-14 grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <Brand className="mb-[18px] text-white" smallTone="text-blush" />
-            <p className="text-[.92rem] leading-[1.7] text-white/60">
-              Premium event hire, styling and décor in Melbourne. Crafting unforgettable celebrations with elegance,
-              neon and a touch of green.
+            <Brand className="mb-[18px] text-white" smallTone="text-white/70" />
+            <p className="text-[.92rem] leading-[1.7] text-white/70">
+              Premium event hire, styling and decor in Melbourne. We craft elegant, memorable experiences for life's most meaningful events.
             </p>
             <div className="mt-[18px] flex gap-3">
               {[
@@ -30,7 +29,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="grid h-10 w-10 place-items-center rounded-full bg-white/[.06] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-neonpink"
+                  className="grid h-10 w-10 place-items-center rounded-full bg-white/[.08] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-forest"
                 >
                   <s.Icon size={18} aria-hidden="true" />
                 </a>
@@ -53,25 +52,25 @@ export default function Footer() {
 
           <div>
             <h4 className="mb-[18px] font-sans text-[.85rem] uppercase tracking-[.18em] text-white">Studio</h4>
-            <ul className="text-[.92rem] text-white/70">
+            <ul className="text-[.92rem] text-white/80">
               <li className="mb-2.5 flex items-start gap-2.5">
-                <MapPin size={16} className="mt-0.5 shrink-0 text-neonpink" aria-hidden="true" />
+                <MapPin size={16} className="mt-0.5 shrink-0 text-white/80" aria-hidden="true" />
                 {CONTACT.address}
               </li>
               <li className="mb-2.5 flex items-start gap-2.5">
-                <Phone size={16} className="mt-0.5 shrink-0 text-neonpink" aria-hidden="true" />
+                <Phone size={16} className="mt-0.5 shrink-0 text-white/80" aria-hidden="true" />
                 <a href={CONTACT.phoneTel} className={linkCls}>
                   {CONTACT.phoneDisplay}
                 </a>
               </li>
               <li className="mb-2.5 flex items-start gap-2.5">
-                <Mail size={16} className="mt-0.5 shrink-0 text-neonpink" aria-hidden="true" />
+                <Mail size={16} className="mt-0.5 shrink-0 text-white/80" aria-hidden="true" />
                 <a href={CONTACT.emailLink} className={linkCls}>
                   {CONTACT.email}
                 </a>
               </li>
               <li className="mb-1 flex items-start gap-2.5">
-                <Clock size={16} className="mt-0.5 shrink-0 text-neonpink" aria-hidden="true" />
+                <Clock size={16} className="mt-0.5 shrink-0 text-white/80" aria-hidden="true" />
                 {CONTACT.hours}
               </li>
             </ul>
@@ -80,11 +79,6 @@ export default function Footer() {
           <div>
             <h4 className="mb-[18px] font-sans text-[.85rem] uppercase tracking-[.18em] text-white">Bookings</h4>
             <ul>
-              <li className="mb-1">
-                <Link to="/payments" className={linkCls}>
-                  Make a Payment
-                </Link>
-              </li>
               <li className="mb-1">
                 <Link to="/contact" className={linkCls}>
                   Plan My Event
@@ -103,7 +97,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="border-t border-white/10 pt-6 text-center text-[.82rem] text-white/50">
+        <div className="border-t border-white/20 pt-6 text-center text-[.82rem] text-white/60">
           © {year} Neon Garden Event Hire · Crafted with care in Melbourne
         </div>
       </Container>

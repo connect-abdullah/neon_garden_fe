@@ -5,11 +5,11 @@ const BASE =
   'group/btn inline-flex items-center justify-center gap-2.5 rounded-full font-sans font-semibold uppercase tracking-[.08em] whitespace-nowrap transition-all duration-300 hover:-translate-y-0.5 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-60'
 
 const VARIANTS = {
-  primary: 'bg-plum text-white shadow-soft hover:bg-neonpink hover:text-white hover:shadow-cardhover',
-  gold: 'bg-gradient-to-br from-gold to-golddeep text-white shadow-soft hover:brightness-105 hover:text-white hover:shadow-cardhover',
-  ghost: 'bg-transparent text-plum border border-plum/70 hover:bg-plum hover:text-white',
-  light: 'bg-white text-plum shadow-soft hover:text-neonpink hover:shadow-cardhover',
-  outlineLight: 'bg-transparent text-white border border-white/50 hover:bg-white hover:text-plum',
+  primary: 'bg-forest text-white hover:bg-forest-deep',
+  gold: 'bg-forest text-white hover:bg-forest-deep',
+  ghost: 'bg-transparent text-forest border border-forest/65 hover:bg-forest hover:text-white',
+  light: 'bg-white text-forest border border-border hover:bg-ivory',
+  outlineLight: 'bg-transparent text-white border border-white/50 hover:bg-white hover:text-forest',
   whatsapp: 'bg-whatsapp text-white shadow-soft hover:bg-whatsappdark hover:text-white',
 }
 

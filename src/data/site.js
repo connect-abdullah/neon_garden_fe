@@ -31,11 +31,15 @@ export const CONTACT = {
 export const NAV_LINKS = [
   { label: 'Home', to: '/' },
   { label: 'About', to: '/about' },
-  { label: 'Services', to: '/services' },
-  { label: 'Hire Items', to: '/hire-items' },
-  { label: 'Gallery', to: '/gallery' },
+  {
+    label: 'Services',
+    to: '/services',
+    children: [
+      { label: 'Hire Items', to: '/hire-items' },
+      { label: 'Gallery', to: '/gallery' },
+    ],
+  },
   { label: 'Packages', to: '/packages' },
-  { label: 'Payments', to: '/payments' },
   { label: 'Contact', to: '/contact' },
 ]
 
