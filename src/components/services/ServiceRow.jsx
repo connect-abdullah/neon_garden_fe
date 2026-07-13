@@ -22,11 +22,6 @@ export default function ServiceRow({ item, titleTag: TitleTag = 'h2' }) {
         <div className="border-r border-border p-6 md:p-8">
           <TitleTag className="font-sans text-2xl text-forest">{item.title}</TitleTag>
           <p className="mt-3 max-w-[42ch] text-sm text-body">{item.shortDescription}</p>
-          <div className="mt-4 flex flex-wrap gap-3">
-            <span className="rounded-full border border-border px-4 py-2 text-xs uppercase tracking-[0.08em] text-body">
-              {item.price}
-            </span>
-          </div>
         </div>
         <div className="p-6 md:p-8">
           {previewLines.length > 0 ? (
@@ -51,9 +46,6 @@ export default function ServiceRow({ item, titleTag: TitleTag = 'h2' }) {
       <div className="space-y-5 py-8 lg:hidden">
         <TitleTag className="font-sans text-[1.65rem] leading-tight text-forest">{item.title}</TitleTag>
         <p className="text-sm text-body">{item.shortDescription}</p>
-        <div className="flex flex-wrap gap-2.5">
-          <span className="rounded-full border border-border bg-white px-4 py-2 text-sm text-body">{item.price}</span>
-        </div>
         <Link to={url} className="group block overflow-hidden rounded-md">
           <img
             src={item.listImage}

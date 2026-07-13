@@ -28,10 +28,6 @@ export default function ServiceDetail() {
             <aside className="bg-white p-5 md:p-6">
               <h2 className="font-sans text-xl text-forest md:text-2xl">Service Details</h2>
               <p className="mt-2 text-sm text-body">A quick overview before you enquire.</p>
-              <div className="mt-5 border-t border-border pt-5 md:mt-6 md:pt-6">
-                <p className="text-xs uppercase tracking-[0.08em] text-muted">Price</p>
-                <p className="mt-2 text-sm text-forest md:text-base">{service.price}</p>
-              </div>
               <Button to="/contact" variant="primary" className="mt-6 w-full md:mt-8">
                 Enquire About This Service
               </Button>

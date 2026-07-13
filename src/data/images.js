@@ -92,5 +92,5 @@ export const siteImages = {
   },
   packageCta: proposals('234252352.png'),
   gallery: galleryItems,
-  homepageGalleryPreview: galleryItems.slice(0, 10),
+  homepageGalleryPreview: galleryItems.slice(16, 28),
 }
