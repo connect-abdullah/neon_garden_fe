@@ -1,8 +1,6 @@
-import { useEffect, useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useState } from 'react'
 import Button from '../ui/Button.jsx'
 import { waLink } from '../../data/site.js'
-import { PACKAGES } from '../../data/packages.js'
 
 const EMPTY = {
   name: '',
@@ -10,8 +8,6 @@ const EMPTY = {
   phone: '',
   event_date: '',
   event_type: '',
-  package_interest: '',
-  guest_count: '',
   location: '',
   budget: '',
   message: '',
@@ -40,23 +36,19 @@ function Field({ label, name, type = 'text', value, onChange, required, optional
 }
 
 export default function ContactForm({ eventTypes = [] }) {
-  const [searchParams] = useSearchParams()
   const [form, setForm] = useState(EMPTY)
+  const [files, setFiles] = useState([])
   const [status, setStatus] = useState('idle') // idle | loading | success | error
   const [statusMessage, setStatusMessage] = useState('')
-
-  useEffect(() => {
-    const packageSlug = searchParams.get('package')
-    if (!packageSlug) return
-    const matched = PACKAGES.find((p) => p.slug === packageSlug)
-    if (matched) {
-      setForm((f) => ({ ...f, package_interest: matched.title }))
-    }
-  }, [searchParams])
 
   const update = (e) => {
     const { name, value, type, checked } = e.target
     setForm((f) => ({ ...f, [name]: type === 'checkbox' ? checked : value }))
+  }
+
+  const onFilesChange = (e) => {
+    const selected = Array.from(e.target.files || [])
+    setFiles(selected)
   }
 
   const onSubmit = async (e) => {
@@ -71,6 +63,11 @@ export default function ContactForm({ eventTypes = [] }) {
     setStatusMessage('')
 
     try {
+      const fileNote =
+        files.length > 0
+          ? `\nReference images selected: ${files.map((f) => f.name).join(', ')} (will share when email enquiry is connected)`
+          : ''
+
       const msg =
         `Hi Neon Garden! I'd love to enquire about an event.\n\n` +
         `Name: ${form.name}\n` +
@@ -78,11 +75,10 @@ export default function ContactForm({ eventTypes = [] }) {
         `Phone: ${form.phone}\n` +
         `Event type: ${form.event_type}\n` +
         `Event date: ${form.event_date}\n` +
-        `Package of interest: ${form.package_interest || 'Not specified'}\n` +
-        `Guest count: ${form.guest_count || 'Not specified'}\n` +
         `Location: ${form.location || 'Not specified'}\n` +
         `Budget: ${form.budget || 'Not specified'}\n\n` +
-        `${form.message}`
+        `${form.message}` +
+        fileNote
 
       const opened = window.open(waLink(msg), '_blank', 'noopener')
       if (!opened) {
@@ -90,6 +86,7 @@ export default function ContactForm({ eventTypes = [] }) {
       }
 
       setForm(EMPTY)
+      setFiles([])
       setStatus('success')
       setStatusMessage('Your enquiry is ready in WhatsApp. We will respond within 24 hours.')
     } catch {
@@ -116,53 +113,34 @@ export default function ContactForm({ eventTypes = [] }) {
         <Field label="Event Date" name="event_date" type="date" value={form.event_date} onChange={update} required />
       </div>
 
-      <div className="grid min-w-0 gap-4 sm:grid-cols-2">
-        <div className="flex min-w-0 flex-col gap-1.5">
-          <label htmlFor="event_type" className="text-[.72rem] font-medium uppercase tracking-[.1em] text-body">
-            Event Type
-          </label>
-          <select
-            id="event_type"
-            name="event_type"
-            value={form.event_type}
-            onChange={update}
-            required
-            className="field-input rounded-sm"
-          >
-            <option value="">Select event type</option>
-            {eventTypes.map((t) => (
-              <option key={t} value={t}>
-                {t}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="flex min-w-0 flex-col gap-1.5">
-          <label htmlFor="package_interest" className="text-[.72rem] font-medium uppercase tracking-[.1em] text-body">
-            Package of Interest
-          </label>
-          <select
-            id="package_interest"
-            name="package_interest"
-            value={form.package_interest}
-            onChange={update}
-            className="field-input rounded-sm"
-          >
-            <option value="">Select package (optional)</option>
-            {PACKAGES.map((p) => (
-              <option key={p.slug} value={p.title}>
-                {p.title}
-              </option>
-            ))}
-          </select>
-        </div>
+      <div className="flex min-w-0 flex-col gap-1.5">
+        <label htmlFor="event_type" className="text-[.72rem] font-medium uppercase tracking-[.1em] text-body">
+          Event Type
+        </label>
+        <select
+          id="event_type"
+          name="event_type"
+          value={form.event_type}
+          onChange={update}
+          required
+          className="field-input rounded-sm"
+        >
+          <option value="">Select event type</option>
+          {eventTypes.map((t) => (
+            <option key={t} value={t}>
+              {t}
+            </option>
+          ))}
+        </select>
       </div>
 
-      <div className="grid min-w-0 gap-4 sm:grid-cols-2">
-        <Field label="Guest Count" name="guest_count" value={form.guest_count} onChange={update} placeholder="e.g. 80" />
-        <Field label="Location or Suburb" name="location" value={form.location} onChange={update} placeholder="Melbourne suburb or venue" />
-      </div>
+      <Field
+        label="Location or Suburb"
+        name="location"
+        value={form.location}
+        onChange={update}
+        placeholder="Melbourne suburb or venue"
+      />
 
       <Field label="Budget" name="budget" value={form.budget} onChange={update} optional placeholder="Optional budget range" />
 
@@ -179,6 +157,32 @@ export default function ContactForm({ eventTypes = [] }) {
           placeholder="Venue, colour palette, styling vision, and anything else we should know."
           className="field-input min-h-[140px] resize-y rounded-sm"
         />
+      </div>
+
+      <div className="flex flex-col gap-1.5">
+        <label htmlFor="mood_board" className="text-[.72rem] font-medium uppercase tracking-[.1em] text-body">
+          Reference images / mood board
+          <span className="ml-1 normal-case tracking-normal text-muted">(optional)</span>
+        </label>
+        <input
+          id="mood_board"
+          name="mood_board"
+          type="file"
+          accept="image/*"
+          multiple
+          onChange={onFilesChange}
+          className="field-input rounded-sm file:mr-3 file:border-0 file:bg-forest file:px-3 file:py-1.5 file:text-xs file:uppercase file:tracking-[0.08em] file:text-white"
+        />
+        <p className="text-xs text-muted">
+          Photos are stored locally for now and will be attached when email enquiry is connected.
+        </p>
+        {files.length > 0 && (
+          <ul className="mt-1 space-y-1 text-xs text-body">
+            {files.map((file) => (
+              <li key={`${file.name}-${file.lastModified}`}>{file.name}</li>
+            ))}
+          </ul>
+        )}
       </div>
 
       <label className="flex items-start gap-3 text-sm text-body">

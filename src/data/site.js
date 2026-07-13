@@ -1,3 +1,6 @@
+import { HIRE_ITEMS } from './hireItems.js'
+import { SERVICES } from './services.js'
+
 // Central site config — contact details, social links, nav, and WhatsApp helpers.
 
 export const WHATSAPP_NUMBER = '61451934652'
@@ -34,14 +37,50 @@ export const NAV_LINKS = [
   {
     label: 'Services',
     to: '/services',
-    children: [
-      { label: 'Hire Items', to: '/hire-items' },
-      { label: 'Gallery', to: '/gallery' },
-    ],
+    mega: true,
   },
-  { label: 'Packages', to: '/packages' },
   { label: 'Contact', to: '/contact' },
 ]
+
+/** Multi-column Services mega menu (hire items first, then styling, then explore). */
+export const SERVICES_MEGA_MENU = {
+  hire: {
+    heading: 'Hire Collection',
+    items: HIRE_ITEMS.map((item) => ({
+      label: item.title,
+      description: item.text,
+      to: `/hire-items#${item.slug}`,
+    })),
+  },
+  styling: {
+    heading: 'Styling Services',
+    items: SERVICES.map((item) => ({
+      label: item.title,
+      description: item.shortDescription,
+      to: `/services/${item.slug}`,
+    })),
+  },
+  explore: {
+    heading: 'Explore',
+    items: [
+      {
+        label: 'All Services',
+        description: 'Browse every styling service we offer.',
+        to: '/services',
+      },
+      {
+        label: 'All Hire Items',
+        description: 'Full hire collection for any celebration.',
+        to: '/hire-items',
+      },
+      {
+        label: 'Gallery',
+        description: 'Recent moments we have styled.',
+        to: '/gallery',
+      },
+    ],
+  },
+}
 
 export const EVENT_TYPES = [
   'Wedding', 'Nikah', 'Reception', 'Engagement', 'Henna Night',
@@ -53,5 +92,4 @@ export const FOOTER_EXPLORE = [
   { label: 'Services', to: '/services' },
   { label: 'Hire Items', to: '/hire-items' },
   { label: 'Gallery', to: '/gallery' },
-  { label: 'Packages', to: '/packages' },
 ]

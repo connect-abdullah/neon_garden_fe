@@ -85,14 +85,16 @@ export default function PackageDetail() {
         </Container>
       </section>
 
-      <section className="relative mt-10 overflow-hidden md:mt-16">
-        <img
-          src={currentPackage.ctaImage}
-          alt="Floral event decor"
-          className="h-52 w-full object-cover sm:h-72 md:h-[420px]"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,20,14,0.18)_0%,rgba(0,20,14,0.55)_100%)]" />
-        <Container className="relative -mt-10 px-4 pb-12 md:absolute md:inset-0 md:-mt-0 md:grid md:place-items-center md:px-6 md:pb-0">
+      <section className="mt-10 bg-ivory md:relative md:mt-16 md:overflow-hidden md:bg-transparent">
+        <div className="relative">
+          <img
+            src={currentPackage.ctaImage}
+            alt="Floral event decor"
+            className="h-56 w-full object-cover object-center sm:h-72 md:h-[420px]"
+          />
+          <div className="absolute inset-0 hidden bg-[linear-gradient(180deg,rgba(0,20,14,0.18)_0%,rgba(0,20,14,0.55)_100%)] md:block" />
+        </div>
+        <Container className="relative px-4 py-8 md:absolute md:inset-0 md:grid md:place-items-center md:px-6 md:py-0">
           <div className="mx-auto w-full max-w-3xl bg-white p-6 text-center shadow-soft md:p-12 md:shadow-none">
             <p className="text-xs uppercase tracking-[0.08em] text-muted">Let&apos;s Plan Your Event</p>
             <h2 className="mt-4 font-serif uppercase text-forest">Ready To Book This Package?</h2>

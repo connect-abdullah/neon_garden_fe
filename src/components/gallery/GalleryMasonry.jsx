@@ -12,6 +12,7 @@ export default function GalleryMasonry({
   initialCount = 24,
   step = 16,
   showFilters = true,
+  columnsClass = 'columns-2 gap-3 sm:gap-4 lg:columns-3 xl:columns-4',
 }) {
   const [filter, setFilter] = useState('all')
   const [count, setCount] = useState(initialCount)
@@ -55,7 +56,7 @@ export default function GalleryMasonry({
         </div>
       )}
 
-      <div className="columns-2 gap-3 sm:gap-4 lg:columns-3 xl:columns-4">
+      <div className={columnsClass}>
         {visible.map((t, i) => (
           <GalleryCard key={t.src} src={t.src} alt={t.alt} onClick={() => setLightboxIndex(i)} />
         ))}

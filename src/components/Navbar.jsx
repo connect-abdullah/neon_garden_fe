@@ -6,6 +6,7 @@ import IconButton from './ui/IconButton.jsx'
 import { ChevronRight, Menu, X } from './icons.jsx'
 import useScrolled from '../hooks/useScrolled.js'
 import { NAV_LINKS, WA_ENQUIRE } from '../data/site.js'
+import ServicesMegaMenu, { ServicesMobileSections } from './ServicesMegaMenu.jsx'
 
 export default function Navbar() {
   const location = useLocation()
@@ -13,7 +14,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
-  const dropdownRef = useRef(null)
+  const closeTimerRef = useRef(null)
 
   const isHome = location.pathname === '/'
   const overlayMode = isHome && !scrolled
@@ -21,6 +22,30 @@ export default function Navbar() {
   const closeMenu = () => {
     setOpen(false)
     setMobileServicesOpen(false)
+  }
+
+  const openServices = () => {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current)
+      closeTimerRef.current = null
+    }
+    setServicesOpen(true)
+  }
+
+  const scheduleCloseServices = () => {
+    if (closeTimerRef.current) clearTimeout(closeTimerRef.current)
+    closeTimerRef.current = setTimeout(() => {
+      setServicesOpen(false)
+      closeTimerRef.current = null
+    }, 120)
+  }
+
+  const closeServices = () => {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current)
+      closeTimerRef.current = null
+    }
+    setServicesOpen(false)
   }
 
   const linkClass = ({ isActive }) =>
@@ -35,16 +60,6 @@ export default function Navbar() {
     }`
 
   useEffect(() => {
-    if (!servicesOpen) return undefined
-    const onClickOutside = (event) => {
-      if (!dropdownRef.current || dropdownRef.current.contains(event.target)) return
-      setServicesOpen(false)
-    }
-    window.addEventListener('mousedown', onClickOutside)
-    return () => window.removeEventListener('mousedown', onClickOutside)
-  }, [servicesOpen])
-
-  useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
     return () => {
       document.body.style.overflow = ''
@@ -54,7 +69,15 @@ export default function Navbar() {
   useEffect(() => {
     setOpen(false)
     setMobileServicesOpen(false)
-  }, [location.pathname])
+    setServicesOpen(false)
+  }, [location.pathname, location.hash])
+
+  useEffect(
+    () => () => {
+      if (closeTimerRef.current) clearTimeout(closeTimerRef.current)
+    },
+    [],
+  )
 
   const mobileLinkClass = ({ isActive }) =>
     `block py-3.5 text-base transition-colors ${isActive ? 'text-forest' : 'text-inverse'}`
@@ -82,7 +105,7 @@ export default function Navbar() {
 
           <nav className="hidden items-center gap-[30px] lg:flex" aria-label="Primary">
             {NAV_LINKS.map((l) => {
-              if (!l.children) {
+              if (!l.mega) {
                 return (
                   <NavLink key={l.to} to={l.to} end={l.to === '/'} className={linkClass}>
                     {l.label}
@@ -91,14 +114,24 @@ export default function Navbar() {
               }
 
               return (
-                <div key={l.to} ref={dropdownRef} className="relative">
+                <div
+                  key={l.to}
+                  className="relative"
+                  onMouseEnter={openServices}
+                  onMouseLeave={scheduleCloseServices}
+                >
                   <button
                     type="button"
                     className={`relative inline-flex items-center gap-1 py-1.5 text-[.84rem] font-medium tracking-[.05em] transition-colors ${
-                      overlayMode ? 'text-white hover:text-white/90' : 'text-inverse hover:text-forest'
+                      overlayMode
+                        ? 'text-white hover:text-white/90'
+                        : servicesOpen
+                          ? 'text-forest'
+                          : 'text-inverse hover:text-forest'
                     }`}
                     aria-haspopup="true"
                     aria-expanded={servicesOpen}
+                    onFocus={openServices}
                     onClick={() => setServicesOpen((value) => !value)}
                   >
                     {l.label}
@@ -108,21 +141,10 @@ export default function Navbar() {
                       className={`transition-transform ${servicesOpen ? 'rotate-90' : ''}`}
                     />
                   </button>
+
                   {servicesOpen && (
-                    <div className="absolute left-0 top-full mt-3 min-w-[220px] rounded-md border border-border bg-white p-2 shadow-soft">
-                      <NavLink to={l.to} className="block rounded px-3 py-2 text-sm text-inverse hover:bg-ivory" onClick={() => setServicesOpen(false)}>
-                        All Services
-                      </NavLink>
-                      {l.children.map((child) => (
-                        <NavLink
-                          key={child.to}
-                          to={child.to}
-                          className="block rounded px-3 py-2 text-sm text-inverse hover:bg-ivory"
-                          onClick={() => setServicesOpen(false)}
-                        >
-                          {child.label}
-                        </NavLink>
-                      ))}
+                    <div className="absolute left-1/2 top-full z-[110] -translate-x-[45%] pt-3">
+                      <ServicesMegaMenu onNavigate={closeServices} />
                     </div>
                   )}
                 </div>
@@ -183,7 +205,7 @@ export default function Navbar() {
 
         <div className="flex-1 overflow-y-auto px-5 py-2">
           {NAV_LINKS.map((l) => {
-            if (!l.children) {
+            if (!l.mega) {
               return (
                 <NavLink key={l.to} to={l.to} end={l.to === '/'} onClick={closeMenu} className={mobileLinkClass}>
                   {l.label}
@@ -206,23 +228,7 @@ export default function Navbar() {
                     className={`shrink-0 transition-transform ${mobileServicesOpen ? 'rotate-90' : ''}`}
                   />
                 </button>
-                {mobileServicesOpen && (
-                  <div className="space-y-1 pb-3 pl-3">
-                    <NavLink to={l.to} onClick={closeMenu} className="block py-2 text-sm text-body hover:text-forest">
-                      All Services
-                    </NavLink>
-                    {l.children.map((child) => (
-                      <NavLink
-                        key={child.to}
-                        to={child.to}
-                        onClick={closeMenu}
-                        className="block py-2 text-sm text-body hover:text-forest"
-                      >
-                        {child.label}
-                      </NavLink>
-                    ))}
-                  </div>
-                )}
+                {mobileServicesOpen && <ServicesMobileSections onNavigate={closeMenu} />}
               </div>
             )
           })}

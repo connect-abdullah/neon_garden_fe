@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { Container } from '../components/ui.jsx'
 import { ArrowRight } from '../components/icons.jsx'
 import CTA from '../components/CTA.jsx'
@@ -6,6 +7,17 @@ import { HIRE_ITEMS } from '../data/hireItems.js'
 import { siteImages } from '../data/images.js'
 
 export default function HireItems() {
+  const location = useLocation()
+
+  useEffect(() => {
+    if (!location.hash) return
+    const id = location.hash.slice(1)
+    const el = document.getElementById(id)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
+  }, [location.hash])
+
   return (
     <>
       <section className="relative flex min-h-[50svh] items-end overflow-hidden pb-12 pt-[150px] text-white md:pt-[180px]">
@@ -19,7 +31,8 @@ export default function HireItems() {
           <p className="text-xs uppercase tracking-[0.1em] text-white/85">Hire Collection</p>
           <h1 className="mt-4 max-w-[16ch] font-serif uppercase text-white">Curated pieces for every story.</h1>
           <p className="mt-5 max-w-[70ch] text-white/90">
-            Hire backdrops, gardens, frames, neon signs and styling pieces as package add-ons or standalone items for your celebration.
+            Backdrops, gardens, frames and custom neon — handpicked hire elements that bring your styling
+            vision to life. Available as add-ons to any package or as standalone hire.
           </p>
           <Link
             to="/contact"
@@ -34,13 +47,13 @@ export default function HireItems() {
         <Container>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {HIRE_ITEMS.map((item) => (
-              <article key={item.title} className="group">
+              <article key={item.slug} id={item.slug} className="group scroll-mt-28">
                 <div className="overflow-hidden">
                   <img
                     src={item.img}
                     alt={`${item.title} available for hire in Melbourne`}
                     loading="lazy"
-                    className="aspect-[4/5] w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                    className="aspect-square w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                   />
                 </div>
                 <h2 className="mt-4 font-serif text-2xl text-forest">{item.title}</h2>

@@ -2,134 +2,109 @@ import { Link } from 'react-router-dom'
 import { Container, Button } from '../components/ui.jsx'
 import { ArrowRight } from '../components/icons.jsx'
 import CTA from '../components/CTA.jsx'
-import FAQSection from '../components/home/FAQSection.jsx'
-import TestimonialsMarquee from '../components/home/TestimonialsMarquee.jsx'
-import PackageRow from '../components/packages/PackageRow.jsx'
-import Counter from '../components/Counter.jsx'
+import ServiceRow from '../components/services/ServiceRow.jsx'
 import GalleryMasonry from '../components/gallery/GalleryMasonry.jsx'
+import Counter from '../components/Counter.jsx'
+import TestimonialsMarquee from '../components/home/TestimonialsMarquee.jsx'
+import FAQSection from '../components/home/FAQSection.jsx'
 import { CONTACT, WA_ENQUIRE } from '../data/site.js'
 import { siteImages } from '../data/images.js'
-import { FEATURED_SERVICES, STATS, TESTIMONIALS } from '../data/home.js'
-import { PACKAGES } from '../data/packages.js'
+import { STATS, TESTIMONIALS } from '../data/home.js'
+import { SERVICES } from '../data/services.js'
 import { GALLERY_FILTERS } from '../data/gallery.js'
 import { FAQS } from '../data/faq.js'
+
+const OWNERS_STORY = `We're a Melbourne-based couple who fell in love, got married and celebrated all little moments along the way. On our own celebration journey, we realised how important it is to create meaningful and beautiful styled events matching your vibe. Inspired by our experience, we're here to help bring your special moments to life with celebrations you'll never forget.`
 
 export default function Home() {
   return (
     <>
-      <section className="relative flex min-h-[85svh] items-end overflow-hidden pb-16 pt-[140px] text-white md:min-h-[100svh] md:pb-24">
-        <img
-          src={siteImages.hero}
-          alt="Styled engagement event with elegant floral decor"
-          className="absolute inset-0 h-full w-full object-cover object-[center_42%] md:object-[center_38%]"
-          fetchPriority="high"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,20,14,.72)_0%,rgba(0,20,14,.46)_45%,rgba(0,20,14,.22)_100%)]" />
-        <Container className="relative">
-          <p className="text-xs uppercase tracking-[0.08em] text-white/85">Melbourne Premium Event Styling</p>
-          <h1 className="mt-4 max-w-[900px] font-serif uppercase leading-[0.95] text-white">
-            Elegant Events <br />
-            Styled With <br />
-            Intention
-          </h1>
-          <p className="mt-6 max-w-[720px] text-white/90">
-            From intimate proposals to full-scale receptions, Neon Garden creates refined styling experiences designed around your event story.
-          </p>
-          <Link to="/services" className="mt-10 inline-flex items-center gap-2 border-b border-white pb-1 text-sm uppercase tracking-[0.08em]">
-            Explore Services <ArrowRight size={16} className="transition-transform hover:translate-x-1" />
-          </Link>
+      <section className="relative min-h-svh overflow-hidden bg-black text-white md:min-h-[100svh]">
+        <div className="absolute inset-0">
+          <img
+            src={siteImages.hero}
+            alt="Styled engagement lounge with Til Death neon and floral décor"
+            className="h-full w-full object-cover object-[center_42%] md:object-[72%_38%]"
+            fetchPriority="high"
+          />
+          {/* Mobile: vertical scrim for readable copy */}
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,.55)_0%,rgba(0,0,0,.4)_45%,rgba(0,0,0,.75)_100%)] md:hidden" />
+          {/* Desktop: soft left-to-right fade — no hard edge */}
+          <div className="absolute inset-0 hidden bg-[linear-gradient(90deg,#000_0%,#000_28%,rgba(0,0,0,.85)_40%,rgba(0,0,0,.45)_52%,rgba(0,0,0,.12)_64%,transparent_78%)] md:block" />
+        </div>
+
+        <Container className="relative flex min-h-svh items-end pb-16 pt-[140px] md:min-h-[100svh] md:items-center md:pb-24 md:pt-[120px]">
+          <div className="max-w-[520px]">
+            <p className="text-xs uppercase tracking-[0.08em] text-[#c4a484]">
+              Melbourne Premium Event Styling and Hire
+            </p>
+            <h1 className="mt-4 font-serif uppercase leading-[0.95] text-white">
+              Curated for every budget
+            </h1>
+            <p className="mt-6 max-w-[460px] text-white/90">
+              From intimate proposals, backyard event, small scale event to full-scale receptions, Neon
+              Garden creates refined styling experiences designed around your event story.
+            </p>
+            <Link
+              to="/services"
+              className="mt-10 inline-flex items-center gap-2 border-b border-[#c4a484] pb-1 text-sm uppercase tracking-[0.08em] text-[#c4a484]"
+            >
+              Explore Services <ArrowRight size={16} className="transition-transform hover:translate-x-1" />
+            </Link>
+          </div>
         </Container>
       </section>
 
       <section className="bg-ivory py-16 md:py-24">
         <Container>
-          <h2 className="mx-auto max-w-[1000px] text-center font-serif uppercase text-forest">
-            Styling Celebrations With Intention, Warmth And Editorial Detail
-          </h2>
-          <p className="mx-auto mt-5 max-w-[740px] text-center text-body">
-            We blend refined florals, sculptural backdrops and premium finishing touches to transform your venue into a seamless guest experience.
-          </p>
-
-          <div className="mt-12 hidden items-center justify-center gap-4 md:flex">
-            <img
-              src={siteImages.brandStory.left}
-              alt="Decor detail with floral styling"
-              className="h-[350px] w-[24%] object-cover"
-              loading="lazy"
-            />
-            <img
-              src={siteImages.brandStory.center}
-              alt="Main event table and centerpiece styling"
-              className="h-[480px] w-[42%] object-cover"
-              loading="lazy"
-            />
-            <img
-              src={siteImages.brandStory.right}
-              alt="Styled catering and table details"
-              className="h-[350px] w-[24%] object-cover"
-              loading="lazy"
-            />
+          <div className="mx-auto max-w-[720px] text-center">
+            <p className="font-serif text-lg font-semibold leading-relaxed text-forest md:text-2xl">
+              {OWNERS_STORY}
+            </p>
+            <p className="mt-5 text-sm italic text-body">— From the owners</p>
           </div>
 
-          <div className="mt-12 md:hidden">
-            <img
-              src={siteImages.brandStory.center}
-              alt="Main event table and centerpiece styling"
-              className="aspect-[4/5] w-full object-cover"
-              loading="lazy"
+          <div className="mt-12">
+            <GalleryMasonry
+              items={siteImages.brandStoryCollage}
+              filters={[]}
+              initialCount={8}
+              step={0}
+              showFilters={false}
+              columnsClass="columns-2 gap-3 sm:columns-3 sm:gap-4 lg:columns-4"
             />
-            <div className="mt-4 grid grid-cols-2 gap-4">
-              <img src={siteImages.brandStory.left} alt="Decor detail with floral styling" className="aspect-[4/5] w-full object-cover" loading="lazy" />
-              <img src={siteImages.brandStory.right} alt="Styled catering and table details" className="aspect-[4/5] w-full object-cover" loading="lazy" />
-            </div>
           </div>
         </Container>
       </section>
 
       <section className="bg-white py-16 md:py-24">
         <Container>
-          <div className="mb-2 flex flex-wrap items-end justify-between gap-4 border-t border-border py-8">
-            <h2 className="max-w-[620px] text-forest">Discover Services</h2>
-            <Button variant="primary" to="/services">
+          <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="text-xs uppercase tracking-[0.1em] text-body">Services</p>
+              <h2 className="mt-3 text-forest">Styling Services</h2>
+            </div>
+            <Button variant="ghost" to="/services">
               View All Services
             </Button>
           </div>
-          <div className="grid gap-0 border-y border-border lg:grid-cols-3">
-            {FEATURED_SERVICES.slice(0, 3).map((item, idx) => (
-              <article key={item.title} className={`p-7 ${idx < 2 ? 'lg:border-r lg:border-border' : ''}`}>
-                <img src={item.img} alt={`${item.title} setup`} className="aspect-[4/3] w-full object-cover" loading="lazy" />
-                <h3 className="mt-5 font-sans text-2xl text-forest">{item.title}</h3>
-                <p className="mt-3 text-body">{item.text}</p>
-              </article>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-ivory py-16 md:py-24">
-        <Container>
-          <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="text-xs uppercase tracking-[0.1em] text-body">Packages</p>
-              <h2 className="mt-3 text-forest">Our Styling Packages</h2>
-            </div>
-            <Button variant="ghost" to="/packages">
-              View All Packages
-            </Button>
-          </div>
-          <div className="border-y border-border">
-            {PACKAGES.slice(0, 4).map((item) => (
-              <PackageRow key={item.slug} item={item} titleTag="h3" />
+          <div className="border-y border-border bg-white">
+            {SERVICES.slice(0, 4).map((item) => (
+              <ServiceRow key={item.slug} item={item} titleTag="h3" />
             ))}
           </div>
         </Container>
       </section>
 
       <section className="relative overflow-hidden px-3 py-16 md:px-5 md:py-24">
-        <img src={siteImages.statsBackground} alt="Wide styled event table scene" className="absolute inset-3 h-[calc(100%-24px)] w-[calc(100%-24px)] object-cover object-center md:inset-5 md:h-[calc(100%-40px)] md:w-[calc(100%-40px)]" />
+        <img
+          src={siteImages.statsBackground}
+          alt="Wide styled event table scene"
+          className="absolute inset-3 h-[calc(100%-24px)] w-[calc(100%-24px)] object-cover object-center md:inset-5 md:h-[calc(100%-40px)] md:w-[calc(100%-40px)]"
+        />
         <div className="absolute inset-3 bg-[linear-gradient(180deg,rgba(0,20,14,0.06)_0%,rgba(0,20,14,0.78)_58%,rgba(0,20,14,0.92)_100%)] md:inset-5" />
         <Container className="relative pt-48 md:pt-72">
-          <div className="grid grid-cols-2 gap-10 md:gap-30 md:pl-16 text-white md:grid-cols-4">
+          <div className="grid grid-cols-2 gap-10 text-white md:grid-cols-4 md:gap-30 md:pl-16">
             {STATS.map((item) => (
               <div key={item.label}>
                 <Counter
@@ -170,7 +145,7 @@ export default function Home() {
       <CTA
         eyebrow="Ready to book?"
         title="Let's design your celebration"
-        description="Tell us your date, venue and guest count — we'll recommend the best styling direction and package for your event."
+        description="Tell us your date, venue and vision — we'll recommend the best styling direction for your event."
         buttonText="Plan My Event"
         buttonTo="/contact"
         secondaryText="WhatsApp Us"
@@ -194,7 +169,12 @@ export default function Home() {
               WhatsApp Us
             </Button>
           </div>
-          <a href={CONTACT.instagram} target="_blank" rel="noopener noreferrer" className="mt-6 inline-block border-b border-white/80 pb-1 text-sm uppercase tracking-[0.08em] text-white/90">
+          <a
+            href={CONTACT.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-block border-b border-white/80 pb-1 text-sm uppercase tracking-[0.08em] text-white/90"
+          >
             {CONTACT.instagramHandle}
           </a>
         </Container>
