@@ -15,10 +15,10 @@ const galleryItems = [
   { src: engagement('17991403118499247.jpg'), cat: 'engagements', alt: 'Engagement event with custom decor details' },
   { src: proposals('18017007449046041.jpg'), cat: 'proposals', alt: 'Proposal sign and candlelit scene' },
   { src: engagement('17933728702074850.jpg'), cat: 'weddings', alt: 'Wedding decor and table arrangement' },
-  { src: engagement('17855910931919965.jpg'), cat: 'engagements', alt: 'Engagement lounge styling with florals' },
+  { src: engagement('17855910931919965_1.jpg'), cat: 'engagements', alt: 'Engagement lounge styling with florals' },
   { src: engagement('17855939417036294.jpg'), cat: 'engagements', alt: 'Engagement ceremony backdrop and seating' },
   { src: engagement('17923403813258446.jpg'), cat: 'engagements', alt: 'Engagement tablescape with layered linens' },
-  { src: birthday('18061965490029916.jpg'), cat: 'birthdays', alt: 'Birthday setup with layered balloons' },
+  { src: birthday('18007924409624805.jpg'), cat: 'birthdays', alt: 'Birthday setup with layered balloons' },
   { src: engagement('17950880267620276.jpg'), cat: 'weddings', alt: 'Wedding reception floral installation' },
   { src: engagement('17862956559612329.jpg'), cat: 'engagements', alt: 'Engagement vertical garden backdrop' },
   { src: engagement('18031741510026045.jpg'), cat: 'weddings', alt: 'Wedding head table with garden styling' },
@@ -31,8 +31,35 @@ const galleryItems = [
   { src: proposals('17847374879824186.jpg'), cat: 'proposals', alt: 'Intimate proposal scene with candles' },
   { src: proposals('17912136733194891.jpg'), cat: 'proposals', alt: 'Proposal moment with golden floral styling' },
   { src: proposals('18062031538006021.jpg'), cat: 'proposals', alt: 'Proposal setup with neon sign and florals' },
-  { src: proposals('IMG_20260704_130921_504.jpg'), cat: 'proposals', alt: 'Bridal shower proposal styling detail' },
+  { src: proposals('Screenshot_20260702_215553_Instagram.jpg'), cat: 'proposals', alt: 'Bridal shower proposal styling detail' },
 ]
+
+/** Pick up to `limit` gallery tiles matching any of the given categories (order preserved). */
+export const galleryByCat = (cats, limit = 8) =>
+  galleryItems.filter((item) => cats.includes(item.cat)).slice(0, limit)
+
+/** Round-robin mix from category groups, up to `limit` unique tiles. */
+export const galleryMix = (catGroups, limit = 8) => {
+  const pools = catGroups.map((cats) => galleryItems.filter((item) => cats.includes(item.cat)))
+  const picked = []
+  const seen = new Set()
+  let i = 0
+  while (picked.length < limit) {
+    let added = false
+    for (const pool of pools) {
+      if (picked.length >= limit) break
+      const item = pool[i]
+      if (item && !seen.has(item.src)) {
+        seen.add(item.src)
+        picked.push(item)
+        added = true
+      }
+    }
+    if (!added) break
+    i += 1
+  }
+  return picked
+}
 
 export const siteImages = {
   logo: engagement('17852208730721063.jpg'),
@@ -50,7 +77,7 @@ export const siteImages = {
     { src: engagement('18023288527219482.jpg'), alt: 'Cultural event lounge styling' },
     { src: engagement('17991403118499247.jpg'), alt: 'Wedding reception floral styling' },
     { src: proposals('17948329442674517.jpg'), alt: 'Proposal floral arch detail' },
-    { src: engagement('17855910931919965.jpg'), alt: 'Birthday balloon and dessert styling' },
+    { src: engagement('17855910931919965_1.jpg'), alt: 'Birthday balloon and dessert styling' },
   ],
   statsBackground: engagement('18093761524134510.jpg'),
   services: {
@@ -61,7 +88,7 @@ export const siteImages = {
     babyShowers: birthday('18058850906356466.jpg'),
     engagements: engagement('18093761524134510.jpg'),
     weddings: engagement('17991403118499247.jpg'),
-    picnics: engagement('17855910931919965.jpg'),
+    picnics: engagement('17855910931919965_1.jpg'),
     southAsian: engagement('18023288527219482.jpg'),
     nikahHenna: engagement('18023288527219482.jpg'),
   },

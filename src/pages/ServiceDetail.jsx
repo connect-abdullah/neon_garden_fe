@@ -1,6 +1,7 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { Container, Button } from '../components/ui.jsx'
 import { ArrowRight } from '../components/icons.jsx'
+import GalleryMasonry from '../components/gallery/GalleryMasonry.jsx'
 import { CONTACT, WA_ENQUIRE } from '../data/site.js'
 import { siteImages } from '../data/images.js'
 import { getServiceBySlug, SERVICES } from '../data/services.js'
@@ -12,7 +13,6 @@ export default function ServiceDetail() {
   if (!service) return <Navigate to="/services" replace />
 
   const related = SERVICES.filter((item) => item.slug !== service.slug).slice(0, 2)
-  const heroImage = service.listImage
   const ctaImage = siteImages.packageCta
 
   return (
@@ -34,11 +34,17 @@ export default function ServiceDetail() {
             </aside>
           </div>
 
-          <img
-            src={heroImage}
-            alt={`${service.title} event styling`}
-            className="mt-4 h-[220px] w-full object-cover sm:h-[300px] md:h-[420px]"
-          />
+          {service.showcase?.length > 0 && (
+            <div className="mt-4">
+              <GalleryMasonry
+                items={service.showcase}
+                showFilters={false}
+                initialCount={8}
+                step={0}
+                columnsClass="columns-2 gap-2 sm:gap-3 md:columns-3 lg:columns-4"
+              />
+            </div>
+          )}
 
           <div className="mt-10 grid gap-8 lg:grid-cols-[1.6fr_1fr] lg:gap-10">
             <div>

@@ -91,7 +91,7 @@ export const HIRE_ITEMS = [
   },
   {
     slug: 'centerpieces',
-    title: 'Centerpieces',
+    title: 'Center Pieces',
     img: siteImages.hireItems.centerpieces,
     text: 'Curated floral centerpieces, candles and finishing accents for your tables.',
     mode: 'comingSoon',

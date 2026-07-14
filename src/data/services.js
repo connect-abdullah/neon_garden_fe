@@ -1,4 +1,4 @@
-import { siteImages } from './images.js'
+import { galleryByCat, galleryMix, siteImages } from './images.js'
 
 export const SERVICES = [
   {
@@ -10,6 +10,7 @@ export const SERVICES = [
       'These can be hired by itself or as a package. Choose individual hire pieces that fit your celebration without committing to a full styling package.',
     price: '$180 – $650',
     listImage: siteImages.services.budgetFriendly,
+    showcase: galleryMix([['proposals'], ['engagements'], ['birthdays']], 8),
     pairings: [],
     hireLinks: [
       { label: 'Neon signs', to: '/hire-items/neon-signs' },
@@ -26,6 +27,7 @@ export const SERVICES = [
       'We offer themed birthday packages for tiny humans to Milestone birthdays. Pair your celebration with photo-ready add-ons that make the day feel personal and memorable.',
     price: '$680 – $1,450',
     listImage: siteImages.services.birthdays,
+    showcase: galleryByCat(['birthdays'], 8),
     pairings: [
       'Photo memory wall',
       'Birthday entry sign',
@@ -43,6 +45,7 @@ export const SERVICES = [
       "While we can't take away all the pressure, we're here to help create a magical, personalized atmosphere that makes your moment truly memorable.",
     price: '$750 – $1,350',
     listImage: siteImages.services.proposals,
+    showcase: galleryByCat(['proposals'], 8),
     pairings: ['Date night dinner table', 'Cute camps for star gazing', 'Picnic set up'],
     hireLinks: [],
   },
@@ -55,6 +58,7 @@ export const SERVICES = [
       "We understand how overwhelming the planning can be amidst all the excitement, and we're committed to helping you create a stunning, personalized setting that makes the celebration truly memorable for your bride-to-be.",
     price: '$720 – $1,380',
     listImage: siteImages.services.bridalShowers,
+    showcase: galleryByCat(['proposals'], 8),
     pairings: [
       'Bridal table set up',
       'Bridal picnics',
@@ -71,6 +75,7 @@ export const SERVICES = [
       "Our décor services for baby showers are elegant and personalised. We're here to help you create a charming, personalized setting that makes the celebration truly special and unforgettable for the new to-be-Mommies.",
     price: '$640 – $1,280',
     listImage: siteImages.services.babyShowers,
+    showcase: galleryMix([['birthdays'], ['proposals']], 8),
     pairings: ['Table set ups', 'Entry signs', 'Picnic set ups', 'Best wishes wall'],
     hireLinks: [],
   },
@@ -83,6 +88,7 @@ export const SERVICES = [
       'Our decor services for engagement parties are designed to transform your celebration into a memorable event. From elegant backdrops to personalized touches, we help create a stunning setting that reflects the joy and love of this special milestone.',
     price: '$980 – $2,100',
     listImage: siteImages.services.engagements,
+    showcase: galleryByCat(['engagements', 'weddings'], 8),
     pairings: [
       'Table set ups',
       'Entry signs',
@@ -101,6 +107,7 @@ export const SERVICES = [
       'At our decor services for your big day, we focus on transforming your special day into an extraordinary celebration. From exquisite backdrops to personalized details, we create a stunning setting that captures the love and elegance of your occasion.',
     price: '$1,650 – $4,200',
     listImage: siteImages.services.weddings,
+    showcase: galleryByCat(['weddings', 'engagements'], 8),
     pairings: [
       'Table set ups',
       'Entry signs',
@@ -119,6 +126,7 @@ export const SERVICES = [
       'There is nothing more than having a perfect outdoor setup. Our idea of picnic set ups are more versatile — from birthday to graduations, couple date nights to family & friends gathering.',
     price: '$420 – $980',
     listImage: siteImages.services.picnics,
+    showcase: galleryMix([['engagements'], ['birthdays']], 8),
     pairings: ['Back drops', 'Centre pieces', 'Custom walls'],
     hireLinks: [],
   },
@@ -131,6 +139,7 @@ export const SERVICES = [
       'We love culture and understand the diversity and every detail of South Asian celebrations — styled with care for Nikah, Mehndi, Eid and Ramadan moments.',
     price: '$890 – $2,450',
     listImage: siteImages.services.southAsian,
+    showcase: galleryByCat(['engagements', 'weddings'], 8),
     pairings: ['Nikah Partition walls', 'Mehndi nights', 'Eid and Ramadan set ups'],
     hireLinks: [],
   },
