@@ -12,9 +12,9 @@ export const SERVICES = [
     listImage: siteImages.services.budgetFriendly,
     pairings: [],
     hireLinks: [
-      { label: 'Neon signs', to: '/hire-items#neon-signs' },
-      { label: 'Backdrops', to: '/hire-items#backdrops' },
-      { label: 'Vertical gardens', to: '/hire-items#vertical-gardens' },
+      { label: 'Neon signs', to: '/hire-items/neon-signs' },
+      { label: 'Backdrops', to: '/hire-items/backdrops' },
+      { label: 'Vertical gardens', to: '/hire-items/vertical-gardens' },
     ],
   },
   {

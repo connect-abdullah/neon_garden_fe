@@ -5,6 +5,7 @@ import About from './pages/About.jsx'
 import Services from './pages/Services.jsx'
 import ServiceDetail from './pages/ServiceDetail.jsx'
 import HireItems from './pages/HireItems.jsx'
+import HireItemDetail from './pages/HireItemDetail.jsx'
 import Gallery from './pages/Gallery.jsx'
 import Packages from './pages/Packages.jsx'
 import PackageDetail from './pages/PackageDetail.jsx'
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/services/:slug" element={<ServiceDetail />} />
         <Route path="/hire-items" element={<HireItems />} />
+        <Route path="/hire-items/:slug" element={<HireItemDetail />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/packages" element={<Packages />} />
         <Route path="/packages/:slug" element={<PackageDetail />} />

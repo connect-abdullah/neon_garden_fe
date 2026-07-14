@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Metal Frame",
+    "image": "/assets/frames/metal-frame.jpg",
+    "description": "1.6m × 2m collapsible metal frame available in black or white.",
+    "price": {
+      "withNeon": "$50 including GST",
+      "standalone": "$120 including GST"
+    }
+  },
+  {
+    "title": "Gold Arch",
+    "image": "/assets/frames/gold-arch.jpg",
+    "description": "1.8m × 2.1m collapsible gold arch frame.",
+    "price": {
+      "withNeon": "$60 including GST",
+      "standalone": "$140 including GST"
+    }
+  },
+  {
+    "title": "Mesh Backdrop",
+    "image": "/assets/frames/mesh-backdrop.png",
+    "description": "1.2m × 2.1m white metal mesh backdrop for neon signs, florals and greenery.",
+    "price": {
+      "withNeon": "$70 each including GST",
+      "standalone": "$90 each including GST"
+    }
+  }
+]

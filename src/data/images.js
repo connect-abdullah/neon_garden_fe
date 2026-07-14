@@ -73,9 +73,7 @@ export const siteImages = {
     frames: engagement('17905380197781480.jpg'),
     neon: birthday('17982655528206349.jpg'),
     customSignage: birthday('18058415080357361.jpg'),
-    arches: proposals('17948329442674517.jpg'),
-    dessertTables: birthday('17926000715908984.jpg'),
-    tableStyling: engagement('18057494854532834.jpg'),
+    centerpieces: engagement('18057494854532834.jpg'),
     floralInstallations: engagement('17950880267620276.jpg'),
   },
   about: {

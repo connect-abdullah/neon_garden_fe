@@ -1,0 +1,128 @@
+[
+  {
+    "title": "Pink & White Arch Backdrop",
+    "image": "/assets/backdrops/pink-white-arch-backdrop.jpg",
+    "description": "Solid white and pink arch backdrops. White backdrop is 2m × 1.2m and pink backdrop is 1.7m × 1.2m. Custom decal available.",
+    "price": {
+      "white": "$120 including GST",
+      "pink": "$80 including GST",
+      "customDecal": "$75 including GST"
+    }
+  },
+  {
+    "title": "Blues Arch Backdrop",
+    "image": "/assets/backdrops/blues-arch-backdrop.jpg",
+    "description": "Blue fabric arch backdrop set. Large: 2.3m × 1.2m. Small: 1.8m × 1m.",
+    "price": {
+      "setOf3": "$250 including GST",
+      "setOf2": "$220 including GST",
+      "single": "$120 including GST"
+    }
+  },
+  {
+    "title": "Gelati Arch Backdrop",
+    "image": "/assets/backdrops/gelati-arch-backdrop.jpg",
+    "description": "Pink, lilac and peach fabric arch backdrop set. Large: 2.3m × 1.2m. Small: 1.8m × 1m.",
+    "price": {
+      "setOf3": "$250 including GST",
+      "setOf2": "$220 including GST",
+      "single": "$120 including GST"
+    }
+  },
+  {
+    "title": "Coral, Peach & Maroon Arch Backdrop",
+    "image": "/assets/backdrops/coral-peach-maroon-arch-backdrop.jpg",
+    "description": "Coral, peach and maroon fabric arch backdrop set.",
+    "price": {
+      "setOf3": "$250 including GST",
+      "setOf2": "$220 including GST",
+      "single": "$120 including GST"
+    }
+  },
+  {
+    "title": "Nudes Arch Backdrop",
+    "image": "/assets/backdrops/nudes-arch-backdrop.jpg",
+    "description": "Neutral fabric arch backdrop set.",
+    "price": {
+      "setOf3": "$250 including GST",
+      "setOf2": "$220 including GST",
+      "single": "$120 including GST"
+    }
+  },
+  {
+    "title": "Safari Arch Backdrop",
+    "image": "/assets/backdrops/safari-arch-backdrop.jpg",
+    "description": "Safari themed fabric arch backdrop set.",
+    "price": {
+      "setOf3": "$250 including GST",
+      "setOf2": "$220 including GST",
+      "single": "$120 including GST"
+    }
+  },
+  {
+    "title": "Superheroes Arch Backdrop",
+    "image": "/assets/backdrops/superheroes-arch-backdrop.jpg",
+    "description": "Superhero themed fabric arch backdrop set.",
+    "price": {
+      "setOf3": "$250 including GST",
+      "setOf2": "$220 including GST",
+      "single": "$120 including GST"
+    }
+  },
+  {
+    "title": "Ice Cream & Sprinkles Arch Backdrop",
+    "image": "/assets/backdrops/ice-cream-sprinkles-arch-backdrop.jpg",
+    "description": "Ice cream and sprinkles themed fabric arch backdrop set.",
+    "price": {
+      "setOf3": "$250 including GST",
+      "setOf2": "$220 including GST",
+      "single": "$120 including GST"
+    }
+  },
+  {
+    "title": "Disney Princesses Arch Backdrop",
+    "image": "/assets/backdrops/disney-princesses-arch-backdrop.jpg",
+    "description": "Disney Princess themed fabric arch backdrop set.",
+    "price": {
+      "setOf3": "$250 including GST",
+      "setOf2": "$220 including GST",
+      "single": "$120 including GST"
+    }
+  },
+  {
+    "title": "Barbie Round Backdrop",
+    "image": "/assets/backdrops/barbie-round-backdrop.jpg",
+    "description": "2m round Barbie backdrop. Optional matching plinths included.",
+    "price": {
+      "backdropAndPlinths": "$280 including GST",
+      "backdropOnly": "$140 including GST"
+    }
+  },
+  {
+    "title": "Peppa Pig Round Backdrop",
+    "image": "/assets/backdrops/peppa-pig-round-backdrop.jpg",
+    "description": "2m round Peppa Pig backdrop. Optional matching plinths included.",
+    "price": {
+      "backdropAndPlinths": "$280 including GST",
+      "backdropOnly": "$140 including GST"
+    }
+  },
+  {
+    "title": "Paw Patrol Round Backdrop",
+    "image": "/assets/backdrops/paw-patrol-round-backdrop.jpg",
+    "description": "2m round Paw Patrol backdrop. Optional matching plinths included.",
+    "price": {
+      "backdropAndPlinths": "$280 including GST",
+      "backdropOnly": "$140 including GST"
+    }
+  },
+  {
+    "title": "Farmyard Round Backdrop",
+    "image": "/assets/backdrops/farmyard-round-backdrop.jpg",
+    "description": "2m round Farmyard backdrop. Optional matching plinths included.",
+    "price": {
+      "backdropAndPlinths": "$280 including GST",
+      "backdropOnly": "$140 including GST"
+    }
+  }
+]

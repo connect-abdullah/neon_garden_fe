@@ -49,10 +49,10 @@ export const FEATURED_SERVICES = [
 ]
 
 export const HIRE_COLLECTION = [
-  { title: 'Backdrops', img: siteImages.hireItems.backdrops },
-  { title: 'Vertical Gardens', img: siteImages.hireItems.verticalGardens },
-  { title: 'Frames', img: siteImages.hireItems.frames },
-  { title: 'Neon Lights', img: siteImages.hireItems.neon },
+  { title: 'Backdrops', img: siteImages.hireItems.backdrops, to: '/hire-items/backdrops' },
+  { title: 'Vertical Gardens', img: siteImages.hireItems.verticalGardens, to: '/hire-items/vertical-gardens' },
+  { title: 'Frames', img: siteImages.hireItems.frames, to: '/hire-items/frames' },
+  { title: 'Neon Lights', img: siteImages.hireItems.neon, to: '/hire-items/neon-signs' },
 ]
 
 export const INSPIRATION = [

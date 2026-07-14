@@ -1,4 +1,4 @@
-import { HIRE_ITEMS } from './hireItems.js'
+import { HIRE_ITEMS, hireItemHref } from './hireItems.js'
 import { SERVICES } from './services.js'
 
 // Central site config — contact details, social links, nav, and WhatsApp helpers.
@@ -49,7 +49,7 @@ export const SERVICES_MEGA_MENU = {
     items: HIRE_ITEMS.map((item) => ({
       label: item.title,
       description: item.text,
-      to: `/hire-items#${item.slug}`,
+      to: hireItemHref(item),
     })),
   },
   styling: {

@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { Container } from '../components/ui.jsx'
 import { ArrowRight } from '../components/icons.jsx'
 import CTA from '../components/CTA.jsx'
-import { HIRE_ITEMS } from '../data/hireItems.js'
+import { HIRE_ITEMS, hireItemHref } from '../data/hireItems.js'
 import { siteImages } from '../data/images.js'
 
 export default function HireItems() {
@@ -45,27 +45,52 @@ export default function HireItems() {
 
       <section className="bg-ivory py-14 md:py-20">
         <Container>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {HIRE_ITEMS.map((item) => (
-              <article key={item.slug} id={item.slug} className="group scroll-mt-28">
-                <div className="overflow-hidden">
-                  <img
-                    src={item.img}
-                    alt={`${item.title} available for hire in Melbourne`}
-                    loading="lazy"
-                    className="aspect-square w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-                  />
-                </div>
-                <h2 className="mt-4 font-serif text-2xl text-forest">{item.title}</h2>
-                <p className="mt-2 text-sm text-body">{item.text}</p>
-                <Link
-                  to="/contact"
-                  className="mt-3 inline-flex items-center gap-1 text-xs uppercase tracking-[0.08em] text-forest"
-                >
-                  Enquire <ArrowRight size={14} />
-                </Link>
-              </article>
-            ))}
+          <div className="grid grid-cols-2 items-stretch gap-4 sm:gap-6 lg:grid-cols-4 lg:gap-8">
+            {HIRE_ITEMS.map((item) => {
+              const isLinked = item.mode !== 'comingSoon'
+              const href = hireItemHref(item)
+
+              return (
+                <article key={item.slug} id={item.slug} className="group flex h-full scroll-mt-28 flex-col">
+                  {isLinked ? (
+                    <Link to={href} className="block overflow-hidden">
+                      <img
+                        src={item.img}
+                        alt={`${item.title} available for hire in Melbourne`}
+                        loading="lazy"
+                        className="aspect-square w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                      />
+                    </Link>
+                  ) : (
+                    <div className="overflow-hidden">
+                      <img
+                        src={item.img}
+                        alt={`${item.title} available for hire in Melbourne`}
+                        loading="lazy"
+                        className="aspect-square w-full object-cover"
+                      />
+                    </div>
+                  )}
+                  <h2 className="mt-3 font-serif text-lg text-forest sm:mt-4 sm:text-2xl">{item.title}</h2>
+                  <p className="mt-1.5 flex-1 text-xs text-body sm:mt-2 sm:text-sm">{item.text}</p>
+                  {isLinked ? (
+                    <Link
+                      to={href}
+                      className="mt-auto inline-flex items-center gap-1 pt-2 text-[10px] uppercase tracking-[0.08em] text-forest sm:pt-3 sm:text-xs"
+                    >
+                      Explore more <ArrowRight size={14} />
+                    </Link>
+                  ) : (
+                    <Link
+                      to="/contact"
+                      className="mt-auto inline-flex items-center gap-1 pt-2 text-[10px] uppercase tracking-[0.08em] text-forest sm:pt-3 sm:text-xs"
+                    >
+                      Enquire <ArrowRight size={14} />
+                    </Link>
+                  )}
+                </article>
+              )
+            })}
           </div>
         </Container>
       </section>
