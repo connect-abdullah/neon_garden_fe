@@ -2,23 +2,6 @@ import { galleryByCat, galleryMix, siteImages } from './images.js'
 
 export const SERVICES = [
   {
-    slug: 'budget-friendly-hire',
-    title: 'Budget Friendly Hire',
-    shortDescription:
-      'This budget friendly hire is convenient and versatile. It is suitable for all event.',
-    overview:
-      'These can be hired by itself or as a package. Choose individual hire pieces that fit your celebration without committing to a full styling package.',
-    price: '$180 – $650',
-    listImage: siteImages.services.budgetFriendly,
-    showcase: galleryMix([['proposals'], ['engagements'], ['birthdays']], 8),
-    pairings: [],
-    hireLinks: [
-      { label: 'Neon signs', to: '/hire-items/neon-signs' },
-      { label: 'Backdrops', to: '/hire-items/backdrops' },
-      { label: 'Vertical gardens', to: '/hire-items/vertical-gardens' },
-    ],
-  },
-  {
     slug: 'birthday',
     title: 'Birthday',
     shortDescription:

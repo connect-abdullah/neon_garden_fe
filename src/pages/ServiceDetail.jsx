@@ -53,7 +53,7 @@ export default function ServiceDetail() {
 
               {service.hireLinks?.length > 0 && (
                 <>
-                  <h3 className="mt-8 font-sans text-xl text-forest md:text-2xl">Hire pieces</h3>
+                  <h3 className="mt-8 font-sans text-xl text-forest md:text-2xl">Hire Items</h3>
                   <ul className="mt-4 space-y-3 text-sm text-body md:text-base">
                     {service.hireLinks.map((link) => (
                       <li key={link.to}>
@@ -80,7 +80,7 @@ export default function ServiceDetail() {
               {service.note && <p className="mt-8 text-sm text-body md:text-base">{service.note}</p>}
             </div>
 
-            <aside className="h-fit bg-blush p-5 md:p-6">
+           {/*  <aside className="h-fit bg-blush p-5 md:p-6">
               <h3 className="font-sans text-lg text-forest md:text-xl">You May Also Like</h3>
               <div className="mt-4 divide-y divide-border">
                 {related.map((item) => (
@@ -94,7 +94,7 @@ export default function ServiceDetail() {
                   </Link>
                 ))}
               </div>
-            </aside>
+            </aside> */}
           </div>
         </Container>
       </section>

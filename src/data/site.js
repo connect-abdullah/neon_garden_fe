@@ -23,7 +23,7 @@ export const CONTACT = {
   phoneTel: 'tel:61451934652',
   email: 'info@neongardeneventhire.com.au',
   emailLink: 'mailto:info@neongardeneventhire.com.au',
-  address: '14 Katandra Crescent, Broadmeadows VIC, Australia',
+  address: '14 Katandra Crescent, BROADMEADOWS VIC 3047',
   hours: 'Mon — Sat, by appointment',
   instagram: 'https://www.instagram.com/neongardeneventhire/',
   instagramHandle: '@neongardeneventhire',
@@ -45,7 +45,7 @@ export const NAV_LINKS = [
 /** Multi-column Services mega menu (hire items first, then styling, then explore). */
 export const SERVICES_MEGA_MENU = {
   hire: {
-    heading: 'Hire Collection',
+    heading: 'Budget Friendly Hire',
     items: HIRE_ITEMS.map((item) => ({
       label: item.title,
       description: item.text,

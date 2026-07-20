@@ -4,6 +4,7 @@ import { ArrowRight } from '../components/icons.jsx'
 import CTA from '../components/CTA.jsx'
 import ServiceRow from '../components/services/ServiceRow.jsx'
 import GalleryMasonry from '../components/gallery/GalleryMasonry.jsx'
+import BrandStoryCollage from '../components/home/BrandStoryCollage.jsx'
 import Counter from '../components/Counter.jsx'
 import TestimonialsMarquee from '../components/home/TestimonialsMarquee.jsx'
 import FAQSection from '../components/home/FAQSection.jsx'
@@ -35,12 +36,10 @@ export default function Home() {
 
         <Container className="relative flex min-h-svh items-end pb-16 pt-[140px] md:min-h-[100svh] md:items-center md:pb-24 md:pt-[120px]">
           <div className="max-w-[520px]">
-            <p className="text-xs uppercase tracking-[0.08em] text-[#c4a484]">
-              Melbourne Premium Event Styling and Hire
-            </p>
-            <h1 className="mt-4 font-serif uppercase leading-[0.95] text-white">
-              Curated for every budget
-            </h1>
+            <h2 className="mt-4 text-[4rem] font-serif uppercase leading-[0.95] text-white">
+             Melbourne Premium Event Styling and Hire <br/> - Curated for every budget
+            </h2>
+       
             <p className="mt-6 max-w-[460px] text-white/90">
               From intimate proposals, backyard event, small scale event to full-scale receptions, Neon
               Garden creates refined styling experiences designed around your event story.
@@ -57,22 +56,15 @@ export default function Home() {
 
       <section className="bg-ivory py-16 md:py-24">
         <Container>
-          <div className="mx-auto max-w-[720px] text-center">
-            <p className="font-serif text-lg font-semibold leading-relaxed text-forest md:text-2xl">
+          <div className="mx-auto max-w-[880px] text-center">
+            <p className="font-serif text-xl font-semibold leading-relaxed text-forest md:text-4xl">
               {OWNERS_STORY}
             </p>
-            <p className="mt-5 text-sm italic text-body">— From the owners</p>
+            <p className="mt-5 text-md italic text-body">— From the owners</p>
           </div>
 
           <div className="mt-12">
-            <GalleryMasonry
-              items={siteImages.brandStoryCollage}
-              filters={[]}
-              initialCount={8}
-              step={0}
-              showFilters={false}
-              columnsClass="columns-2 gap-3 sm:columns-3 sm:gap-4 lg:columns-4"
-            />
+            <BrandStoryCollage items={siteImages.brandStoryCollage} />
           </div>
         </Container>
       </section>
