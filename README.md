@@ -15,7 +15,7 @@ A premium, mobile-first website for **Neon Garden Event Hire**, Melbourne's bout
 | `/` | Home | Hero, services preview, hire collection, inspiration, testimonials, Instagram strip |
 | `/about` | About | Brand story, mission, approach, why-us |
 | `/services` | Services | All 13 services with enquiry CTAs |
-| `/hire-items` | Hire Items | Backdrops, vertical gardens, frames, neon lights |
+| `/hire-items` | Hire Items | Backdrops, vertical gardens, neon signs, wishing wall, center pieces |
 | `/gallery` | Gallery | Filterable masonry of real event imagery + lightbox |
 | `/packages` | Packages | Trending styling packages and inspiration |
 | `/contact` | Contact | WhatsApp, phone, email, address, enquiry form, map |

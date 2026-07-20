@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Live Wish Wall — Style 1",
+    "image": "/assets/wishing_wall/Picture1.png",
+    "description": "Live wish wall hire piece for guest messages and photo moments.",
+    "price": "Starting from $250"
+  },
+  {
+    "title": "Live Wish Wall — Style 2",
+    "image": "/assets/wishing_wall/Picture2.png",
+    "description": "Live wish wall hire piece for guest messages and photo moments.",
+    "price": "Starting from $250"
+  },
+  {
+    "title": "Live Wish Wall — Style 3",
+    "image": "/assets/wishing_wall/Picture3.png",
+    "description": "Live wish wall hire piece for guest messages and photo moments.",
+    "price": "Starting from $320"
+  },
+  {
+    "title": "Live Wish Wall — Style 4",
+    "image": "/assets/wishing_wall/Picture4.png",
+    "description": "Live wish wall hire piece for guest messages and photo moments.",
+    "price": "Starting from $170"
+  },
+  {
+    "title": "Live Wish Wall — Style 5",
+    "image": "/assets/wishing_wall/Picture5.png",
+    "description": "Live wish wall hire piece for guest messages and photo moments.",
+    "price": "Starting from $330"
+  }
+]

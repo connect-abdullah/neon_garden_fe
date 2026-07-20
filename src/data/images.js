@@ -98,6 +98,7 @@ export const siteImages = {
     customSignage: birthday('18058415080357361.jpg'),
     centerpieces: engagement('18057494854532834.jpg'),
     floralInstallations: engagement('17950880267620276.jpg'),
+    wishingWall: '/assets/wishing_wall/Picture1.png',
   },
   about: {
     hero: engagement('18093761524134510.jpg'),

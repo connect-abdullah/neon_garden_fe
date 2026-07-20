@@ -32,7 +32,7 @@ export default function HireItems() {
           <p className="text-xs uppercase tracking-[0.1em] text-white/85">Hire Collection</p>
           <h1 className="mt-4 max-w-[16ch] font-serif uppercase text-white">Curated pieces for every story.</h1>
           <p className="mt-5 max-w-[70ch] text-white/90">
-            Backdrops, gardens, frames and custom neon — handpicked hire elements that bring your styling
+            Backdrops, gardens, neon signs and wish walls — handpicked hire elements that bring your styling
             vision to life. Available as add-ons to any package or as standalone hire.
           </p>
           <Link

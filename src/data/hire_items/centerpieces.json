@@ -1,0 +1,51 @@
+[
+  {
+    "title": "Table Centre Piece — Style 1",
+    "image": "/assets/table_pieces/Picture1.png",
+    "description": "Table centre pieces.",
+    "price": "$40 each",
+    "display": "Available in different colours and finishes."
+  },
+  {
+    "title": "Table Centre Piece — Style 2",
+    "image": "/assets/table_pieces/Picture2.png",
+    "description": "Table centre pieces.",
+    "price": "$25 each",
+    "display": "Available in different colours and finishes."
+  },
+  {
+    "title": "Table Centre Piece — Style 3",
+    "image": "/assets/table_pieces/Picture3.png",
+    "description": "Table centre pieces.",
+    "price": "$25 each",
+    "display": "Available in different colours and finishes."
+  },
+  {
+    "title": "Table Centre Piece — Style 4",
+    "image": "/assets/table_pieces/Picture4.png",
+    "description": "Table centre pieces.",
+    "price": "$38 each",
+    "display": "Available in different colours and finishes."
+  },
+  {
+    "title": "Table Centre Piece — Style 5",
+    "image": "/assets/table_pieces/Picture5.png",
+    "description": "Table centre pieces.",
+    "price": "$50 each",
+    "display": "Available in different colours and finishes."
+  },
+  {
+    "title": "Table Centre Piece — Style 6",
+    "image": "/assets/table_pieces/Picture6.png",
+    "description": "Table centre pieces.",
+    "price": "$65 each",
+    "display": "Available in different colours and finishes."
+  },
+  {
+    "title": "Table Centre Piece — Style 7",
+    "image": "/assets/table_pieces/Picture7.png",
+    "description": "Table centre pieces.",
+    "price": "$45 each",
+    "display": "Available in different colours and finishes."
+  }
+]

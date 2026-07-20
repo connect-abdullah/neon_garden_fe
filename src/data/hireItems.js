@@ -3,6 +3,8 @@ import neonProducts from './hire_items/neon_products.json'
 import verticalGardens from './hire_items/vertical_gardens.json'
 import backdrops from './hire_items/backdrops.json'
 import frames from './hire_items/frames.json'
+import wishingWall from './hire_items/wishing_wall.json'
+import centerpieces from './hire_items/centerpieces.json'
 
 const CONTACT_BLURB =
   'There are multiple options for this collection — finishes, scale and styling can be tailored to your event. Share your colour palette, reference images or anything you have in mind and we will take care of the rest.'
@@ -34,18 +36,19 @@ export function formatHirePrice(price) {
 }
 
 const PRODUCTS_BY_KEY = {
-  backdrops,
+  backdrops: [...backdrops, ...frames],
   'vertical-gardens': verticalGardens,
-  frames,
   'neon-signs': neonProducts,
+  'wishing-wall': wishingWall,
+  centerpieces,
 }
 
 export const HIRE_ITEMS = [
   {
     slug: 'backdrops',
-    title: 'Backdrops',
+    title: 'Backdrops & Frames',
     img: siteImages.hireItems.backdrops,
-    text: 'Floral, structural and custom backdrops.',
+    text: 'Fabric backdrops, round sets and metal hire frames.',
     mode: 'catalog',
     productsKey: 'backdrops',
   },
@@ -56,14 +59,6 @@ export const HIRE_ITEMS = [
     text: 'Lush green walls for any venue.',
     mode: 'catalog',
     productsKey: 'vertical-gardens',
-  },
-  {
-    slug: 'frames',
-    title: 'Frames',
-    img: siteImages.hireItems.frames,
-    text: 'Ornate hire frames and photo moments.',
-    mode: 'catalog',
-    productsKey: 'frames',
   },
   {
     slug: 'neon-signs',
@@ -90,19 +85,20 @@ export const HIRE_ITEMS = [
     contactBlurb: CONTACT_BLURB,
   },
   {
+    slug: 'wishing-wall',
+    title: 'Wishing Wall',
+    img: siteImages.hireItems.wishingWall,
+    text: 'Live wish walls for guest messages and photo-ready moments.',
+    mode: 'catalog',
+    productsKey: 'wishing-wall',
+  },
+  {
     slug: 'centerpieces',
     title: 'Center Pieces',
     img: siteImages.hireItems.centerpieces,
-    text: 'Curated floral centerpieces, candles and finishing accents for your tables.',
-    mode: 'comingSoon',
-  },
-  {
-    slug: 'floral-installations',
-    title: 'Floral Installations',
-    img: siteImages.hireItems.floralInstallations,
-    text: 'Feature florals and installation moments tailored to your event palette.',
-    mode: 'contact',
-    contactBlurb: CONTACT_BLURB,
+    text: 'Table centre pieces in a range of colours and finishes.',
+    mode: 'catalog',
+    productsKey: 'centerpieces',
   },
 ]
 

@@ -4,8 +4,54 @@ import CTA from '../components/CTA.jsx'
 import HireProductCard from '../components/cards/HireProductCard.jsx'
 import { getHireItemBySlug, getHireProducts } from '../data/hireItems.js'
 
+const LEGACY_REDIRECTS = {
+  frames: '/hire-items/backdrops',
+  'floral-installations': '/hire-items',
+}
+
+function ProductGrid({ products }) {
+  return (
+    <div className="grid grid-cols-2 items-stretch gap-2.5 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-5">
+      {products.map((product) => (
+        <HireProductCard key={`${product.title}-${product.image}`} product={product} />
+      ))}
+    </div>
+  )
+}
+
+function GroupedProducts({ products }) {
+  const groups = products.reduce((acc, product) => {
+    const key = product.group || 'Other'
+    if (!acc[key]) acc[key] = []
+    acc[key].push(product)
+    return acc
+  }, {})
+
+  const groupNames = Object.keys(groups)
+
+  if (groupNames.length <= 1) {
+    return <ProductGrid products={products} />
+  }
+
+  return (
+    <div className="space-y-12 md:space-y-16">
+      {groupNames.map((groupName) => (
+        <div key={groupName}>
+          <h2 className="mb-5 font-sans text-xl text-forest md:mb-6 md:text-2xl">{groupName}</h2>
+          <ProductGrid products={groups[groupName]} />
+        </div>
+      ))}
+    </div>
+  )
+}
+
 export default function HireItemDetail() {
   const { slug } = useParams()
+
+  if (LEGACY_REDIRECTS[slug]) {
+    return <Navigate to={LEGACY_REDIRECTS[slug]} replace />
+  }
+
   const item = getHireItemBySlug(slug)
 
   if (!item || item.mode === 'comingSoon') {
@@ -13,6 +59,7 @@ export default function HireItemDetail() {
   }
 
   const products = item.mode === 'catalog' ? getHireProducts(item) : []
+  const hasGroups = products.some((product) => product.group)
 
   return (
     <>
@@ -29,11 +76,7 @@ export default function HireItemDetail() {
       {item.mode === 'catalog' ? (
         <section className="bg-white py-10 md:py-14">
           <Container>
-            <div className="grid grid-cols-2 items-stretch gap-2.5 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-5">
-              {products.map((product) => (
-                <HireProductCard key={`${product.title}-${product.image}`} product={product} />
-              ))}
-            </div>
+            {hasGroups ? <GroupedProducts products={products} /> : <ProductGrid products={products} />}
           </Container>
         </section>
       ) : (
