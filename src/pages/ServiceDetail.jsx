@@ -2,6 +2,7 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import { Container, Button } from '../components/ui.jsx'
 import { ArrowRight } from '../components/icons.jsx'
 import GalleryMasonry from '../components/gallery/GalleryMasonry.jsx'
+import HireProductCard from '../components/cards/HireProductCard.jsx'
 import { CONTACT, WA_ENQUIRE } from '../data/site.js'
 import { siteImages } from '../data/images.js'
 import { getServiceBySlug, SERVICES } from '../data/services.js'
@@ -34,7 +35,17 @@ export default function ServiceDetail() {
             </aside>
           </div>
 
-          {service.showcase?.length > 0 && (
+          {service.packages?.length > 0 && (
+            <div className="mt-4">
+              <div className="grid grid-cols-2 items-stretch gap-2.5 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-5">
+                {service.packages.map((product) => (
+                  <HireProductCard key={product.title} product={product} />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {!service.packages?.length && service.showcase?.length > 0 && (
             <div className="mt-4">
               <GalleryMasonry
                 items={service.showcase}

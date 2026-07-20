@@ -1,4 +1,5 @@
 import { galleryByCat, galleryMix, siteImages } from './images.js'
+import { BIRTHDAY_PACKAGES, PROPOSAL_PACKAGES } from './servicePackages.js'
 
 export const SERVICES = [
   {
@@ -10,7 +11,7 @@ export const SERVICES = [
       'We offer themed birthday packages for tiny humans to Milestone birthdays. Pair your celebration with photo-ready add-ons that make the day feel personal and memorable.',
     price: '$680 – $1,450',
     listImage: siteImages.services.birthdays,
-    showcase: galleryByCat(['birthdays'], 8),
+    packages: BIRTHDAY_PACKAGES,
     pairings: [
       'Photo memory wall',
       'Birthday entry sign',
@@ -28,7 +29,7 @@ export const SERVICES = [
       "While we can't take away all the pressure, we're here to help create a magical, personalized atmosphere that makes your moment truly memorable.",
     price: '$750 – $1,350',
     listImage: siteImages.services.proposals,
-    showcase: galleryByCat(['proposals'], 8),
+    packages: PROPOSAL_PACKAGES,
     pairings: ['Date night dinner table', 'Cute camps for star gazing', 'Picnic set up'],
     hireLinks: [],
   },
