@@ -3,6 +3,9 @@
 const PROPOSAL_ADDON =
   'Enquire us to add date night table set up, romantic picnic or hideout tents .'
 
+const EVENT_ADDON =
+  'Enquire us to add table set ups, centre pieces or picnic set ups.'
+
 export const BIRTHDAY_PACKAGES = [
   {
     title: 'Hey Baby Mesh Setup',
@@ -17,6 +20,13 @@ export const BIRTHDAY_PACKAGES = [
     description:
       'This set up comes with white arched backdrop With neon sign and single white plinth and flower decor Different colour balloon and flower options are also available.',
     price: 'Starting from $425',
+  },
+  {
+    title: 'Vertical Garden 21 Setup',
+    image: '/assets/birthday/18036274042099348.jpg',
+    description:
+      'This set up comes with vertical Garden backdrop, neon sign, three plinth and flower decor. Different colour balloon or flower options are also available.',
+    price: 'Starting from $630',
   },
   {
     title: 'Blue Arched One Setup',
@@ -107,5 +117,164 @@ export const PROPOSAL_PACKAGES = [
     description: 'The proposal set up wooden frame ,neon sign ,flowers and candles.',
     price: 'Starting from $320',
     display: PROPOSAL_ADDON,
+  },
+]
+
+export const BRIDAL_SHOWER_PACKAGES = [
+  {
+    title: 'Golden Metal Frame Setup',
+    image: '/assets/bridal_shower/golden_metal_frame.png',
+    description:
+      'The set up include golden metal frame with Neon sign and flower décor.',
+    price: 'Starting from $320',
+    display: 'Sofa is not included in the price. ' + EVENT_ADDON,
+  },
+  {
+    title: 'Rectangular Frame Setup',
+    image: '/assets/bridal_shower/rectangular_frame.png',
+    description:
+      'The set up include white or black frame with Neon sign, cake plinth and balloon décor.',
+    price: 'Starting from $280',
+    display: EVENT_ADDON,
+  },
+  {
+    title: 'Round Mesh Frame Setup',
+    image: '/assets/bridal_shower/round_mesh.png',
+    description:
+      'The set up include white round frame with Neon sign, multiple plinths and balloon décor.',
+    price: 'Starting from $330',
+    display: EVENT_ADDON,
+  },
+  {
+    title: 'Vertical Garden Balloon Setup',
+    image: '/assets/bridal_shower/vertical_garden_2.png',
+    description:
+      'The set up include vertical garden hung on metal frame with neon sign and balloon décor.',
+    price: 'Starting from $490',
+    display: EVENT_ADDON,
+  },
+  {
+    title: 'Vertical Garden Bride Setup',
+    image: '/assets/bridal_shower/vertical_garden.png',
+    description:
+      'The set up include vertical garden hung on metal frame with neon sign and balloon décor.',
+    price: 'Starting from $540',
+    display: EVENT_ADDON,
+  },
+  {
+    title: 'Mesh Backdrop Curtain Setup',
+    image: '/assets/engagement/18023288527219482.jpg',
+    description:
+      'The set up include mesh backdrop with décor curtain and balloon decor.',
+    price: 'Starting from $500',
+    display: 'Dessert table is not included. ' + EVENT_ADDON,
+  },
+  {
+    title: 'Pink Frame Wifey Setup',
+    image: '/assets/neon-signs/wifey-for-lifey.jpg',
+    description:
+      'The set up include white pink frame with Neon sign, cake plinth and flower décor.',
+    price: 'Starting from $300',
+    display: EVENT_ADDON,
+  },
+]
+
+export const BABY_SHOWER_PACKAGES = [
+  {
+    title: 'Mama To Be Frame Setup',
+    image: '/assets/neon-signs/mama-to-be.jpeg',
+    description:
+      'The set up include white metal frame with neon sign, cake plinth and balloon décor.',
+    price: 'Starting from $360',
+    display: EVENT_ADDON,
+  },
+  {
+    title: 'Hey Baby Round Frame Setup',
+    image: '/assets/birthday/18237164362114595.jpg',
+    description: 'The set up include round metal frame with neon sign and balloon décor.',
+    price: 'Starting from $300',
+    display: EVENT_ADDON,
+  },
+  {
+    title: 'Baby Letters LED Setup',
+    image: '/assets/neon-signs/baby.png',
+    description: 'The set up include big baby letter with LED candles.',
+    price: 'Starting from $300',
+    display: EVENT_ADDON,
+  },
+]
+
+export const ENGAGEMENT_PACKAGES = [
+  {
+    title: 'Arched Frame — Danced All Night',
+    image: '/assets/engagement/18001267108633629.jpg',
+    description:
+      'The set up include arched metal frame, neon sign with balloons or flowers.',
+    price: 'Starting from $370',
+    display: EVENT_ADDON,
+  },
+  {
+    title: 'Arched Frame — Love',
+    image: '/assets/engagement/18096129871284580.jpg',
+    description:
+      'The set up include arched metal frame, neon sign with balloons or flowers.',
+    price: 'Starting from $360',
+    display: EVENT_ADDON,
+  },
+  {
+    title: 'Arched Frame — Cheers To Love',
+    image: '/assets/engagement/17855939417036294.jpg',
+    description:
+      'The set up include arched metal frame , neon sign with balloons or flowers.',
+    price: 'Starting from $370',
+    display: EVENT_ADDON,
+  },
+  {
+    title: 'Arched Frame — Engaged',
+    image: '/assets/neon-signs/engaged.png',
+    description:
+      'The set up include arched metal frame , neon sign with balloons or flowers.',
+    price: 'Starting from $370',
+    display: EVENT_ADDON,
+  },
+  {
+    title: 'Vertical Garden — Sip Sip Hooray',
+    image: '/assets/engagement/18093761524134510.jpg',
+    description:
+      'The set up include vertical garden hung on metal frame with neon sign and cake plinth.',
+    price: 'Starting from $600',
+    display: EVENT_ADDON,
+  },
+  {
+    title: 'Vertical Garden — Drunk In Love',
+    image: '/assets/engagement/17862956559612329.jpg',
+    description:
+      'The set up include vertical garden hung on metal frame and neon sign.',
+    price: 'Starting from $470',
+    display: EVENT_ADDON,
+  },
+  {
+    title: 'Arched Frame — Cheers',
+    image: '/assets/engagement/18057494854532834.jpg',
+    description:
+      'The set up include arched metal frame , neon sign with balloons or flowers.',
+    price: 'Starting from $360',
+    display: EVENT_ADDON,
+  },
+  {
+    title: 'Arched Frame — Danced All Night',
+    image: '/assets/engagement/17991403118499247.jpg',
+    description:
+      'The set up include arched metal frame with neon sign, cake plinth and floral and leafy decor.',
+    price: 'Starting from $520',
+    display: EVENT_ADDON,
+  },
+  {
+    title: 'Arched Frame — Better Together',
+    image: '/assets/engagement/arched_metal_frame.png',
+    description:
+      'The set up include arched metal frame with neon sign, cake plinth and floral decor.',
+    price: 'Starting from $470',
+    display: EVENT_ADDON,
   },
 ]

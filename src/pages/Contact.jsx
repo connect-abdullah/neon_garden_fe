@@ -9,7 +9,7 @@ const DETAILS = [
   { icon: Phone, label: 'Phone / WhatsApp', value: CONTACT.phoneDisplay, href: WA_ENQUIRE, external: true },
   { icon: Mail, label: 'Email', value: CONTACT.email, href: CONTACT.emailLink },
   { icon: InstagramIcon, label: 'Instagram', value: CONTACT.instagramHandle, href: CONTACT.instagram, external: true },
-  { icon: MapPin, label: 'Service Area', value: 'Melbourne & surrounding suburbs' },
+  { icon: MapPin, label: 'Address', value: '14 Katandra Crescent, BROADMEADOWS VIC 3047' },
 ]
 
 export default function Contact() {

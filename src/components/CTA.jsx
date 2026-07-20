@@ -5,6 +5,8 @@ export default function CTA({
   eyebrow,
   title,
   description,
+  itemsTitle,
+  items,
   buttonText,
   buttonLink,
   buttonTo,
@@ -12,6 +14,7 @@ export default function CTA({
   secondaryHref,
   secondaryTo,
   fullWidth = false,
+  embedded = false,
   rounded = true,
   children,
 }) {
@@ -53,6 +56,23 @@ export default function CTA({
         {eyebrow && <p className="text-xs uppercase tracking-[0.1em] text-white/70">{eyebrow}</p>}
         {title && <h2 className="mt-5 font-serif uppercase text-white">{title}</h2>}
         {description && <p className="mx-auto mt-4 max-w-[650px] text-white/80">{description}</p>}
+        {items?.length > 0 && (
+          <div className="mx-auto mt-8 max-w-[520px] text-left">
+            {itemsTitle && (
+              <p className="text-center font-sans text-lg text-white md:text-xl">{itemsTitle}</p>
+            )}
+            <ul className={`space-y-2 text-sm text-white/85 md:text-base ${itemsTitle ? 'mt-4' : ''}`}>
+              {items.map((line) => (
+                <li key={line} className="flex gap-2">
+                  <span aria-hidden="true" className="shrink-0 text-white/70">
+                    •
+                  </span>
+                  <span>{line}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
         {(children || buttonText || secondaryText) && (
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             {children || (
@@ -74,6 +94,10 @@ export default function CTA({
       </div>
     </div>
   )
+
+  if (embedded) {
+    return <div className="mx-auto w-full max-w-3xl">{panel}</div>
+  }
 
   if (fullWidth) {
     return <section className="bg-forest py-16 md:py-24">{panel}</section>
