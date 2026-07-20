@@ -39,7 +39,7 @@ const PRODUCTS_BY_KEY = {
   backdrops: [...backdrops, ...frames],
   'vertical-gardens': verticalGardens,
   'neon-signs': neonProducts,
-  'wishing-wall': wishingWall,
+  'wish-walls': wishingWall,
   centerpieces,
 }
 
@@ -85,12 +85,12 @@ export const HIRE_ITEMS = [
     contactBlurb: CONTACT_BLURB,
   },
   {
-    slug: 'wishing-wall',
-    title: 'Wishing Wall',
+    slug: 'wish-walls',
+    title: 'Wish Walls',
     img: siteImages.hireItems.wishingWall,
     text: 'Live wish walls for guest messages and photo-ready moments.',
     mode: 'catalog',
-    productsKey: 'wishing-wall',
+    productsKey: 'wish-walls',
   },
   {
     slug: 'centerpieces',

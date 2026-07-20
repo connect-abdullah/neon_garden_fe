@@ -7,6 +7,7 @@ import { getHireItemBySlug, getHireProducts } from '../data/hireItems.js'
 const LEGACY_REDIRECTS = {
   frames: '/hire-items/backdrops',
   'floral-installations': '/hire-items',
+  'wishing-wall': '/hire-items/wish-walls',
 }
 
 function ProductGrid({ products }) {

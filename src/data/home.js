@@ -52,7 +52,7 @@ export const HIRE_COLLECTION = [
   { title: 'Backdrops ', img: siteImages.hireItems.backdrops, to: '/hire-items/backdrops' },
   { title: 'Vertical Gardens', img: siteImages.hireItems.verticalGardens, to: '/hire-items/vertical-gardens' },
   { title: 'Neon Lights', img: siteImages.hireItems.neon, to: '/hire-items/neon-signs' },
-  { title: 'Wishing Wall', img: siteImages.hireItems.wishingWall, to: '/hire-items/wishing-wall' },
+  { title: 'Wish Walls', img: siteImages.hireItems.wishingWall, to: '/hire-items/wish-walls' },
   { title: 'Center Pieces', img: siteImages.hireItems.centerpieces, to: '/hire-items/centerpieces' },
 ]
 
