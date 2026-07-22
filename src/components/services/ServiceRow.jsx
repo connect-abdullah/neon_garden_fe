@@ -1,6 +1,21 @@
 import { Link } from 'react-router-dom'
 import { ArrowUpRight, ChevronRight } from '../icons.jsx'
 
+function ServiceImage({ src, title, className }) {
+  if (!src) {
+    return <div aria-hidden="true" className={`bg-muted ${className}`} />
+  }
+
+  return (
+    <img
+      src={src}
+      alt={`${title} styling service`}
+      className={className}
+      loading="lazy"
+    />
+  )
+}
+
 export default function ServiceRow({ item, titleTag: TitleTag = 'h2' }) {
   const url = `/services/${item.slug}`
   const previewLines =
@@ -12,11 +27,10 @@ export default function ServiceRow({ item, titleTag: TitleTag = 'h2' }) {
     <article className="border-b border-border last:border-b-0">
       <div className="hidden lg:grid lg:grid-cols-[minmax(220px,260px)_1.2fr_1fr_80px]">
         <Link to={url} className="group block h-full overflow-hidden">
-          <img
+          <ServiceImage
             src={item.listImage}
-            alt={`${item.title} styling service`}
+            title={item.title}
             className="h-full min-h-[220px] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-            loading="lazy"
           />
         </Link>
         <div className="border-r border-border p-6 md:p-8">
@@ -47,11 +61,10 @@ export default function ServiceRow({ item, titleTag: TitleTag = 'h2' }) {
         <TitleTag className="font-sans text-[1.65rem] leading-tight text-forest">{item.title}</TitleTag>
         <p className="text-sm text-body">{item.shortDescription}</p>
         <Link to={url} className="group block overflow-hidden rounded-md">
-          <img
+          <ServiceImage
             src={item.listImage}
-            alt={`${item.title} styling service`}
+            title={item.title}
             className="aspect-[16/10] w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-            loading="lazy"
           />
         </Link>
         <Link

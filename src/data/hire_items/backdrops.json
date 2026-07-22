@@ -124,5 +124,11 @@
       "backdropAndPlinths": "$280 including GST",
       "backdropOnly": "$140 including GST"
     }
+  },
+  {
+    "title": "Big Baby Letters",
+    "image": "/assets/backdrops/baby_letters.png",
+    "description": "Set of 4 letters.",
+    "price": "$250 including GST"
   }
 ]

@@ -105,6 +105,20 @@ export default function Navbar() {
 
           <nav className="hidden items-center gap-[30px] lg:flex" aria-label="Primary">
             {NAV_LINKS.map((l) => {
+              if (l.href) {
+                return (
+                  <a
+                    key={l.href}
+                    href={l.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={linkClass({ isActive: false })}
+                  >
+                    {l.label}
+                  </a>
+                )
+              }
+
               if (!l.mega) {
                 return (
                   <NavLink key={l.to} to={l.to} end={l.to === '/'} className={linkClass}>
@@ -205,6 +219,21 @@ export default function Navbar() {
 
         <div className="flex-1 overflow-y-auto px-5 py-2">
           {NAV_LINKS.map((l) => {
+            if (l.href) {
+              return (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={closeMenu}
+                  className={mobileLinkClass({ isActive: false })}
+                >
+                  {l.label}
+                </a>
+              )
+            }
+
             if (!l.mega) {
               return (
                 <NavLink key={l.to} to={l.to} end={l.to === '/'} onClick={closeMenu} className={mobileLinkClass}>

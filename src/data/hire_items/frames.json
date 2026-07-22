@@ -25,5 +25,14 @@
       "withNeon": "$70 each including GST",
       "standalone": "$90 each including GST"
     }
+  },
+  {
+    "title": "White Frame",
+    "image": "/assets/frames/white_frame.png",
+    "description": "White hire frame for neon signs, florals and styling setups.",
+    "price": {
+      "withNeon": "$50 including GST",
+      "standalone": "$120 including GST"
+    }
   }
 ]

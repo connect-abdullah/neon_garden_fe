@@ -41,10 +41,16 @@ export default function Footer() {
             <h4 className="mb-[18px] font-sans text-[.85rem] uppercase tracking-[.18em] text-white">Explore</h4>
             <ul>
               {FOOTER_EXPLORE.map((l) => (
-                <li key={l.to} className="mb-1">
-                  <Link to={l.to} className={linkCls}>
-                    {l.label}
-                  </Link>
+                <li key={l.href || l.to} className="mb-1">
+                  {l.href ? (
+                    <a href={l.href} target="_blank" rel="noopener noreferrer" className={linkCls}>
+                      {l.label}
+                    </a>
+                  ) : (
+                    <Link to={l.to} className={linkCls}>
+                      {l.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

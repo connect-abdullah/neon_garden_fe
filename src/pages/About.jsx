@@ -8,27 +8,37 @@ import { siteImages } from '../data/images.js'
 export default function About() {
   return (
     <>
-      <section className="relative flex min-h-[50svh] items-end overflow-hidden pb-12 pt-[150px] text-white md:pt-[180px]">
-        <img
-          src={siteImages.about.hero}
-          alt="Neon Garden styled wedding reception"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,20,14,0.12)_0%,rgba(0,20,14,0.42)_45%,rgba(0,20,14,0.78)_100%)]" />
-        <Container className="relative">
-          <p className="text-xs uppercase tracking-[0.1em] text-white/85">About Neon Garden</p>
-          <h1 className="mt-5 max-w-[18ch] font-serif uppercase leading-[0.95] text-white">
-            Premium event styling with editorial detail.
-          </h1>
-          <p className="mt-6 max-w-[70ch] text-white/90">
-            Neon Garden Event Hire creates elegant event styling and hire experiences across Melbourne — from intimate proposals to full reception styling, with careful attention to florals, backdrops and guest-facing details.
-          </p>
-          <Link
-            to="/contact"
-            className="mt-7 inline-flex items-center gap-2 border-b border-white pb-1 text-sm uppercase tracking-[0.08em]"
-          >
-            Start Your Enquiry <ArrowRight size={16} />
-          </Link>
+      <section className="relative min-h-[70svh] overflow-hidden bg-black text-white md:min-h-[80svh]">
+        <div className="absolute inset-0">
+          {siteImages.about.hero ? (
+            <img
+              src={siteImages.about.hero}
+              alt="Circular vertical garden with custom neon initials"
+              className="h-full w-full object-cover object-[center_40%] md:object-[52%_30%]"
+            />
+          ) : null}
+          {/* Mobile: vertical scrim for readable copy */}
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,.55)_0%,rgba(0,0,0,.4)_45%,rgba(0,0,0,.75)_100%)] md:hidden" />
+          {/* Desktop: soft left-to-right fade — text left, image on the side */}
+          <div className="absolute inset-0 hidden bg-[linear-gradient(90deg,#000_0%,#000_28%,rgba(0,0,0,.85)_40%,rgba(0,0,0,.45)_52%,rgba(0,0,0,.12)_64%,transparent_78%)] md:block" />
+        </div>
+
+        <Container className="relative flex min-h-[70svh] items-end pb-16 pt-[140px] md:min-h-[80svh] md:items-center md:pb-24 md:pt-[120px]">
+          <div className="max-w-[520px]">
+            <p className="text-xs uppercase tracking-[0.1em] text-white/85">About Neon Garden</p>
+            <h1 className="mt-5 font-serif text-[clamp(2.4rem,4.8vw,4.25rem)] uppercase leading-[0.95] text-white">
+              Premium event styling with editorial detail.
+            </h1>
+            <p className="mt-6 max-w-[460px] text-base text-white/90">
+              Neon Garden Event Hire creates elegant event styling and hire experiences across Melbourne — from intimate proposals to full reception styling, with careful attention to florals, backdrops and guest-facing details.
+            </p>
+            <Link
+              to="/contact"
+              className="mt-8 inline-flex items-center gap-2 border-b border-[#c4a484] pb-1 text-sm uppercase tracking-[0.08em] text-[#c4a484]"
+            >
+              Start Your Enquiry <ArrowRight size={16} className="transition-transform hover:translate-x-1" />
+            </Link>
+          </div>
         </Container>
       </section>
 
@@ -44,11 +54,11 @@ export default function About() {
                 We style events around each client&apos;s palette, venue, story and occasion — balancing editorial composition with practical guest experience.
               </p>
             </div>
-            <div className="overflow-hidden lg:justify-self-end">
+            <div className="overflow-hidden bg-black lg:justify-self-end">
               <img
                 src={siteImages.about.feature}
-                alt="Complete styled event table with floral installation"
-                className="aspect-[4/5] w-full max-w-[520px] object-cover lg:aspect-[5/6] lg:max-h-[580px] lg:max-w-none"
+                alt="I got you babe neon sign"
+                className="aspect-[4/5] w-full max-w-[380px] object-contain object-center md:max-w-[420px] lg:aspect-[5/6] lg:max-h-[460px]"
                 loading="lazy"
               />
             </div>

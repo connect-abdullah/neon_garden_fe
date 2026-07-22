@@ -105,7 +105,7 @@ export const SERVICES = [
     ],
     pageCta: {
       description:
-        'We know all events and dream weddings are different, so we are happy to share some of our favourite memories. Please contact us directly to customise your very own dream idea to reality.',
+        'We know all weddings are different. Please contact us directly to customise your own dream wedding to reality.',
       buttonText: 'Upload Mood Boards',
       buttonTo: '/contact',
     },
@@ -135,7 +135,7 @@ export const SERVICES = [
     packageIncludes: ['Nikah Partition walls', 'Mehndi nights', 'Eid and Ramadan set ups'],
     pageCta: {
       description:
-        'We know all events and celebrations are different, so we are happy to share some of our favourite memories. Please contact us directly to customise your very own dream idea to reality.',
+        'We know all pre wedding celebrations and events are different. Please contact us directly to customise your dream celebration.',
       buttonText: 'Upload Mood Boards',
       buttonTo: '/contact',
     },

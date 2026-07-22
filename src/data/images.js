@@ -78,11 +78,11 @@ export const siteImages = {
   ],
   statsBackground: engagement('18093761524134510.jpg'),
   services: {
-    birthdays: birthday('18045780019824849.jpg'),
-    proposals: proposals('18062031538006021.jpg'),
-    bridalShowers: proposals('17948329442674517.jpg'),
-    babyShowers: birthday('18058850906356466.jpg'),
-    engagements: engagement('18093761524134510.jpg'),
+    birthdays: birthday('12312412512.png'),
+    proposals: proposals('18017007449046041.jpg'),
+    bridalShowers: '/assets/bridal_shower/wifey-for-lifey-main.png',
+    babyShowers: '/assets/neon-signs/mama-to-be.jpeg',
+    engagements: '/assets/neon-signs/engaged.png',
     weddings: engagement('17991403118499247.jpg'),
     picnics: engagement('17855910931919965_1.jpg'),
     southAsian: engagement('18023288527219482.jpg'),
@@ -91,7 +91,6 @@ export const siteImages = {
   hireItems: {
     hero: engagement('17905380197781480.jpg'),
     backdrops: proposals('18017007449046041.jpg'),
-    floralBackdrops: engagement('17855939417036294.jpg'),
     verticalGardens: engagement('17862956559612329.jpg'),
     frames: engagement('17905380197781480.jpg'),
     neon: birthday('17982655528206349.jpg'),
@@ -99,9 +98,10 @@ export const siteImages = {
     centerpieces: engagement('18057494854532834.jpg'),
     floralInstallations: engagement('17950880267620276.jpg'),
     wishingWall: '/assets/wishing_wall/Picture1.png',
+    plinths: '/assets/backdrops/plinths.png',
   },
   about: {
-    hero: engagement('18093761524134510.jpg'),
+    hero: '/about_us_hero.png',
     feature: engagement('18031741510026045.jpg'),
   },
   packages: {

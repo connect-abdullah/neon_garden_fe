@@ -39,6 +39,7 @@ export const NAV_LINKS = [
     to: '/services',
     mega: true,
   },
+  { label: 'Gallery', href: CONTACT.instagram },
   { label: 'Contact', to: '/contact' },
 ]
 
@@ -76,7 +77,7 @@ export const SERVICES_MEGA_MENU = {
       {
         label: 'Gallery',
         description: 'Recent moments we have styled.',
-        to: '/gallery',
+        href: CONTACT.instagram,
       },
     ],
   },
@@ -91,5 +92,5 @@ export const FOOTER_EXPLORE = [
   { label: 'About', to: '/about' },
   { label: 'Services', to: '/services' },
   { label: 'Hire Items', to: '/hire-items' },
-  { label: 'Gallery', to: '/gallery' },
+  { label: 'Gallery', href: CONTACT.instagram },
 ]

@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Plinths",
+    "image": "/assets/backdrops/plinths.png",
+    "description": "Hire plinths in three sizes for cakes, florals and styling displays.",
+    "price": {
+      "largeWhite": "$50 including GST",
+      "mediumBlue": "$40 including GST",
+      "smallWhite": "$35 including GST"
+    }
+  }
+]

@@ -5,9 +5,13 @@ import backdrops from './hire_items/backdrops.json'
 import frames from './hire_items/frames.json'
 import wishingWall from './hire_items/wishing_wall.json'
 import centerpieces from './hire_items/centerpieces.json'
+import plinths from './hire_items/plinths.json'
 
 const CONTACT_BLURB =
   'There are multiple options for this collection — finishes, scale and styling can be tailored to your event. Share your colour palette, reference images or anything you have in mind and we will take care of the rest.'
+
+const WISH_WALL_TEXT =
+  'This set up will make you event more fun and memorable while capturing live moments from your big day. This feature is suitable for all kind of events. We will provide you with a pocket friendly printer for guest to print live photos from your big day and leave them in the envelope along with best wishes. Please enquire us directly to customise it as per your vibe and theme.'
 
 const PRICE_LABELS = {
   withNeon: 'With neon',
@@ -20,6 +24,9 @@ const PRICE_LABELS = {
   single: 'Single',
   backdropAndPlinths: 'Backdrop & plinths',
   backdropOnly: 'Backdrop only',
+  largeWhite: 'Large white',
+  mediumBlue: 'Medium blue',
+  smallWhite: 'Small white',
 }
 
 /** Format hire product price (string or option object) into display rows. */
@@ -41,6 +48,7 @@ const PRODUCTS_BY_KEY = {
   'neon-signs': neonProducts,
   'wish-walls': wishingWall,
   centerpieces,
+  plinths,
 }
 
 export const HIRE_ITEMS = [
@@ -69,14 +77,6 @@ export const HIRE_ITEMS = [
     productsKey: 'neon-signs',
   },
   {
-    slug: 'floral-backdrops',
-    title: 'Floral Backdrops',
-    img: siteImages.hireItems.floralBackdrops,
-    text: 'Lush floral walls and soft botanical finishes for photo-ready moments.',
-    mode: 'contact',
-    contactBlurb: CONTACT_BLURB,
-  },
-  {
     slug: 'custom-signage',
     title: 'Custom Signage',
     img: siteImages.hireItems.customSignage,
@@ -88,9 +88,17 @@ export const HIRE_ITEMS = [
     slug: 'wish-walls',
     title: 'Wish Walls',
     img: siteImages.hireItems.wishingWall,
-    text: 'Live wish walls for guest messages and photo-ready moments.',
+    text: WISH_WALL_TEXT,
     mode: 'catalog',
     productsKey: 'wish-walls',
+  },
+  {
+    slug: 'plinths',
+    title: 'Plinths',
+    img: siteImages.hireItems.plinths,
+    text: 'Hire plinths in three sizes for cakes, florals and styling displays.',
+    mode: 'catalog',
+    productsKey: 'plinths',
   },
   {
     slug: 'centerpieces',

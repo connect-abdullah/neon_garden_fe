@@ -1,13 +1,26 @@
 import { NavLink } from 'react-router-dom'
 import { SERVICES_MEGA_MENU } from '../data/site.js'
 
+const megaLinkClass =
+  'block rounded-sm px-2 py-1.5 text-[0.78rem] text-inverse transition-colors hover:bg-ivory hover:text-forest'
+
 function MegaLink({ item, onNavigate }) {
+  if (item.href) {
+    return (
+      <a
+        href={item.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={onNavigate}
+        className={megaLinkClass}
+      >
+        {item.label}
+      </a>
+    )
+  }
+
   return (
-    <NavLink
-      to={item.to}
-      onClick={onNavigate}
-      className="block rounded-sm px-2 py-1.5 text-[0.78rem] text-inverse transition-colors hover:bg-ivory hover:text-forest"
-    >
+    <NavLink to={item.to} onClick={onNavigate} className={megaLinkClass}>
       {item.label}
     </NavLink>
   )
@@ -21,7 +34,7 @@ function MenuColumn({ heading, items, onNavigate, bordered }) {
       </p>
       <div className="flex flex-col">
         {items.map((item) => (
-          <MegaLink key={item.to} item={item} onNavigate={onNavigate} />
+          <MegaLink key={item.href || item.to} item={item} onNavigate={onNavigate} />
         ))}
       </div>
     </div>
@@ -44,6 +57,7 @@ export default function ServicesMegaMenu({ onNavigate }) {
 
 export function ServicesMobileSections({ onNavigate }) {
   const { hire, styling, explore } = SERVICES_MEGA_MENU
+  const mobileLinkClass = 'block py-1.5 text-sm text-inverse hover:text-forest'
 
   return (
     <div className="space-y-4 pb-4 pl-1">
@@ -56,16 +70,29 @@ export function ServicesMobileSections({ onNavigate }) {
             {section.heading}
           </p>
           <div className="flex flex-col">
-            {section.items.map((item) => (
-              <NavLink
-                key={item.to}
-                to={item.to}
-                onClick={onNavigate}
-                className="block py-1.5 text-sm text-inverse hover:text-forest"
-              >
-                {item.label}
-              </NavLink>
-            ))}
+            {section.items.map((item) =>
+              item.href ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={onNavigate}
+                  className={mobileLinkClass}
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  onClick={onNavigate}
+                  className={mobileLinkClass}
+                >
+                  {item.label}
+                </NavLink>
+              ),
+            )}
           </div>
         </div>
       ))}

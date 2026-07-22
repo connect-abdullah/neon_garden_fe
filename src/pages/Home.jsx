@@ -118,7 +118,7 @@ export default function Home() {
               <p className="text-xs uppercase tracking-[0.1em] text-body">Gallery</p>
               <h2 className="mt-3 text-forest">Recent Moments We Styled</h2>
             </div>
-            <Button variant="ghost" to="/gallery">
+            <Button variant="ghost" href={CONTACT.instagram}>
               View Full Gallery
             </Button>
           </div>
